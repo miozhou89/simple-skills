@@ -4,7 +4,7 @@ description: 询问哪个 skill 或流程适合你的处境。本仓库所有 sk
 disable-model-invocation: true
 ---
 
-# Ask Matt
+# Ask Route
 
 你记不住每一个 skill，所以来问。
 
@@ -13,6 +13,8 @@ disable-model-invocation: true
 ## 主流程：想法 → 交付
 
 大多数工作所走的路线。你有一个想法，想把它做出来。
+
+**整套流程（设计 → 规格 → 票据 → 实施 → 评审 → 维护）被编码为 `/requirement-workflow`**——用户提出需求、要求方案设计或开发时模型会自动取用它，逐阶段路由到本页列出的 skill。你在那之下跟随即可；下面各步是这条主流程的具体形态。
 
 1. **`/grill-with-docs`** — 通过访谈打磨想法。只要你**在某个工作目录中工作**，就从这里开始：它是有状态的，会把学到的东西保存在 `CONTEXT.md` 和 ADR 中。（没有工作目录？用 `/grill-me`——见「独立 skill」。两者运行的是同一个 `/grilling` 原语；`grill-with-docs` 是会留下书面记录的那个，所以只要有一个 repo 可以承载这些记录，它就是两者中更好的选择。）
 2. **分支——所有问题都能在对话中敲定吗？** 如果某个问题需要一个可运行的答案（状态、业务逻辑、必须亲眼看到的 UI），就绕道做一个原型，两个方向都由 **`/handoff`** 衔接（原型放在它自己的目录里，这正是 `/handoff` 的用途——见「阶段边界」）：
@@ -29,7 +31,7 @@ disable-model-invocation: true
 
 把第 1–3 步保持在**一个不被打断的上下文窗口**中——在 `/to-tickets` 之前不要 compact 或 clear——这样访谈、spec 和工单都建立在同一份思考之上。之后每个 `/implement` 都从工单出发、全新开始。
 
-限制因素是 **[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)**：模型仍能保持敏锐推理的窗口（在最先进的模型上约 150k tokens）。如果会话在 `/to-tickets` 之前就逼近了它，不要带着退化的状态硬撑——在最近的阶段边界处 `/compact`，然后继续（见「阶段边界」）。
+限制因素是 **smart zone**：模型仍能保持敏锐推理的窗口（在最先进的模型上约 150k tokens）。如果会话在 `/to-tickets` 之前就逼近了它，不要带着退化的状态硬撑——在最近的阶段边界处 `/compact`，然后继续（见「阶段边界」）。
 
 ## 入口匝道
 
@@ -77,7 +79,6 @@ disable-model-invocation: true
 - **`/resolving-merge-conflicts`** — 逐 hunk 处理进行中的 merge 或 rebase 冲突，依据**意图**来解决——追溯到每一方的 primary source——而不是靠挑选行，然后完成这次操作。它从不运行 `--abort`。独立于所有流程：当你已经身处冲突中时用它。
 - **`/prototype`** — 一个回答单个设计问题的一次性小程序：这个状态模型感觉对吗，或者这个 UI 应该长什么样。「一次性」是对代码写法的约束，而不是销毁它的承诺：答案会被折叠进真实代码，而原型本身作为 **primary source** 保留在 main 之外的 `prototype/<name>` 分支上，并从实现 issue 中指向它。它是主流程第 2 步中的绕道，但任何时候设计问题在纸面上难以敲定时都可以用它。
 - **`/research`** — 把阅读的跑腿活委托给**后台 agent**：它对照 **primary sources** 调查一个问题，然后在 repo 中留下一份带引用的 Markdown 文件。它阅读时你可以继续工作。它产出的文件是要带*进*主流程 `/grill-with-docs` 的东西——研究为思考提供养料，而不是取代思考。
-- **`/to-questionnaire`** — 当挡住你的东西不在你的脑子里也不在代码库里，而在**别人的脑子里**时，它会写一份问卷给对方填写。它是 `/grill-me` 的反面：不是就主题访谈你，而是就**发送**访谈你——发给谁、你需要拿回什么——并把问题瞄准那个缺口。收回来的东西是 `/grill-with-docs` 或 `/to-spec` 的素材。
 - **`/wait-what`** — 针对未被理解的消息的纠正手段。在对话中途、在任何其他 skill 内部使用它，agent 会用你缺失的上下文、用大白话、用 `CONTEXT.md` 的词汇重新讲一遍它刚才说的话。它是事后补救；`/grill-with-docs` 是事前预防，因为早早约定的共同语言才能从一开始阻止黑话出现。
 - **`/teach`** — 跨多个会话学习一个概念，把当前目录用作有状态的工作区。
 - **`/writing-for-agents`** — 写给 agent 消费的文档（skills、AGENTS.md、被指到的文档）的参考。

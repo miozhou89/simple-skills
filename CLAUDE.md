@@ -13,7 +13,7 @@ Skills 按 bucket 目录组织在 `skills/` 下：
 
 `engineering/` 和 `productivity/` 中的 skill 还需在 `docs/<bucket>/<skill-name>.md` 提供面向人类的文档页（docs 目录树镜像 `skills/` 下这两个 bucket 目录）。
 
-每个 `SKILL.md` 必为以下二者之一：user-invoked（`disable-model-invocation: true` 且 `agents/openai.yaml` 中 `policy.allow_implicit_invocation: false`，仅人类可触达）或 model-invoked（模型或人类均可触达）。详见 [.agents/invocation.md](./.agents/invocation.md)。
+每个 `SKILL.md` 必为以下二者之一：user-invoked（`disable-model-invocation: true` 且 `agents/openai.yaml` 中 `policy.allow_implicit_invocation: false`，仅人类可触达）或 model-invoked（模型或人类均可触达）。
 
 [`ask-route`](./skills/engineering/ask-route/SKILL.md) 是路由器，映射所有 user-reachable skill 及其相互关系。重新同步文档页的触发条件同样适用于它：每当新增、重命名、移除 skill 或改变某个 user-reachable skill 在流程中的角色时，必须重读 `ask-route` 的 `SKILL.md` 并更新，确保映射准确 —— 新 skill 未被提及，或仍路由到已失效的 skill，即为路由器失效。
 

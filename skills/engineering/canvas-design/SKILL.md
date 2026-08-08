@@ -1,7 +1,6 @@
 ---
 name: canvas-design
 description: 使用设计哲学在 .png 和 .pdf 文档中创建精美的视觉艺术。当用户要求创建海报、艺术品、设计或其他静态作品时应使用此技能。
-license: Complete terms in LICENSE.txt
 ---
 
 这些是创建设计哲学的说明——然后通过视觉表达的美学运动。仅输出 .md 文件、.pdf 文件和 .png 文件。

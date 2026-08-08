@@ -1,7 +1,6 @@
 ---
 name: to-tickets
 description: 把计划、spec 或当前对话拆解为一组 tracer-bullet 票据，每张票据声明其阻塞边，发布到配置好的 tracker——本地以文本形式每票据一个文件，或在真实 tracker 上使用原生阻塞链接。
-disable-model-invocation: true
 ---
 
 # To Tickets

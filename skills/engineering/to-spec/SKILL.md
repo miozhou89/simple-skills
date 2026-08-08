@@ -1,7 +1,6 @@
 ---
 name: to-spec
 description: 把当前对话转化为一份 spec 并发布到项目 issue tracker——不做访谈，只综合你们已经讨论过的内容。
-disable-model-invocation: true
 ---
 
 本 skill 接收当前对话上下文和代码库理解，产出一份 spec。不要访谈用户——只综合你已经知道的内容。
