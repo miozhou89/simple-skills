@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.1
+
+### Patch Changes
+
+- fix skills
+
 ## 1.3.0
 
 ### Minor Changes
