@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.3
+
+### Patch Changes
+
+- skill 精简处理
+
 ## 1.3.2
 
 ### Patch Changes
