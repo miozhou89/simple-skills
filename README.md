@@ -52,8 +52,8 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | Antigravity | `~/.agents/skills` |
 | Antigravity CLI | `~/.agents/skills` |
 | Cline | `~/.agents/skills` |
-| Codex | `~/.agents/skills` |
-| Cursor | `~/.agents/skills` |
+| Codex | `~/.codex/skills` |
+| Cursor | `~/.cursor/skills/` |
 | Deep Agents | `~/.agents/skills` |
 | Gemini CLI | `~/.agents/skills` |
 | GitHub Copilot | `~/.agents/skills` |
