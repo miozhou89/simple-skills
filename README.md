@@ -81,7 +81,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [to-tickets](./skills/engineering/to-tickets/SKILL.md) | 把任何计划、spec 或对话拆解为一组 tracer-bullet 票据，每张票据声明其阻塞边 |
 | [implement](./skills/engineering/implement/SKILL.md) | 构建 spec 或一组票据描述的工作，在约定 seam 处驱动 `/tdd`，提交前以 `/code-review` 收尾 |
 | [wayfinder](./skills/engineering/wayfinder/SKILL.md) | 规划超出一个 agent 会话容量的工作——以决策票据共享地图的形式，一次解决一张 |
-| [systematic-debugging](./skills/engineering/systematic-debugging/SKILL.md) | 修复前先系统化定位根本原因：复现、假设、验证、修复、回归 |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs/SKILL.md) | 针对疑难 bug 和性能回退的纪律化诊断循环：变红反馈回路 → 最小化 → 假设 → 插桩 → 修复 → 回归测试 |
 | [prototype](./skills/engineering/prototype/SKILL.md) | 构建一次性原型来回答设计问题：用一个可分享的 HTML 文件承载状态/逻辑，或多个可切换的 UI 变体 |
 | [research](./skills/engineering/research/SKILL.md) | 对照高可信度 primary source 调查问题，把结果以带引用的 Markdown 文件存入 repo，以后台 agent 方式运行 |
@@ -92,7 +91,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts/SKILL.md) | 逐块处理进行中的 git merge 或 rebase 冲突，追溯各方一手来源意图解决，绝不 `--abort` |
 | [canvas-design](./skills/engineering/canvas-design/SKILL.md) | 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品 |
 | [chart-generator](./skills/engineering/chart-generator/SKILL.md) | 生成数据可视化图表：antv 轻量图表，或按用户 matplotlib 规范输出定制 PNG |
-| [dispatching-parallel-agents](./skills/engineering/dispatching-parallel-agents/SKILL.md) | 面对 2 个以上可独立进行的任务时，并行分派带隔离上下文的子 agent |
 | [doc-coauthoring](./skills/engineering/doc-coauthoring/SKILL.md) | 引导结构化文档协作流程：上下文收集 → 优化与结构化 → 读者测试 |
 | [finishing-a-development-branch](./skills/engineering/finishing-a-development-branch/SKILL.md) | 收尾开发分支：验证测试、检测环境、展示集成选项、执行并清理 |
 | [frontend-design](./skills/engineering/frontend-design/SKILL.md) | 创建有设计感、生产级的前端界面，视觉与代码质量并重 |
@@ -142,7 +140,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 /improve-codebase-architecture
 
 # 6.2 bug定位
-/systematic-debugging
 /diagnosing-bugs
 
 # 6.3 跨会话需求开发

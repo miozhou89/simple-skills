@@ -45,7 +45,7 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 按用户处境路由：
 
 - **重构** → `/improve-codebase-architecture`
-- **bug 定位** → `/systematic-debugging`（先系统化定位根本原因）→ `/diagnosing-bugs`（疑难 bug 的纪律化诊断）
+- **bug 定位** → `/diagnosing-bugs`（根因调查 + 纪律化诊断：反馈循环 → 最小化 → 假设 → 插桩 → 修复 → 回归）
 - **跨会话交接** → `/handoff`，交接后在干净窗口继续
 
 ## 用户处境判断
@@ -61,4 +61,4 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 | 按规格实施 | `/implement` |
 | 评审代码 | `/code-review` |
 | 重构 | `/improve-codebase-architecture` |
-| 排查 bug | `/systematic-debugging` / `/diagnosing-bugs` |
+| 排查 bug | `/diagnosing-bugs` |

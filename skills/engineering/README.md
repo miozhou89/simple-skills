@@ -32,7 +32,6 @@
 - **[requirement-workflow](./requirement-workflow/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
 - **[canvas-design](./canvas-design/SKILL.md)** — 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品。
 - **[chart-generator](./chart-generator/SKILL.md)** — 生成数据可视化图表：antv 轻量图表，或按用户 matplotlib 规范输出定制 PNG。
-- **[dispatching-parallel-agents](./dispatching-parallel-agents/SKILL.md)** — 面对 2 个以上可独立进行的任务时，并行分派带隔离上下文的子 agent。
 - **[doc-coauthoring](./doc-coauthoring/SKILL.md)** — 引导结构化文档协作流程：上下文收集 → 优化与结构化 → 读者测试。
 - **[finishing-a-development-branch](./finishing-a-development-branch/SKILL.md)** — 收尾开发分支：验证测试、检测环境、展示集成选项、执行并清理。
 - **[frontend-design](./frontend-design/SKILL.md)** — 创建有设计感、生产级的前端界面，视觉与代码质量并重。
@@ -43,7 +42,6 @@
 - **[skill-creator](./skill-creator/SKILL.md)** — 创建、迭代改进 skill，并用 eval 与方差分析基准衡量性能。
 - **[software-architecture](./software-architecture/SKILL.md)** — 基于 Clean Architecture 与 DDD 的质量导向架构与编码指导。
 - **[subagent-driven-development](./subagent-driven-development/SKILL.md)** — 为计划中每个任务分派全新实现子 agent，配任务审查与结尾宽范围审查。
-- **[systematic-debugging](./systematic-debugging/SKILL.md)** — 修复前先系统化定位根本原因：复现、假设、验证、修复、回归。
 - **[theme-factory](./theme-factory/SKILL.md)** — 用预设专业配色/字体主题或即时生成的新主题为工件添加一致样式。
 - **[using-git-worktrees](./using-git-worktrees/SKILL.md)** — 确保工作在隔离工作区中——优先原生 worktree 工具，必要时回退 git worktree。
 - **[verification-before-completion](./verification-before-completion/SKILL.md)** — 宣称完成或修复前必须运行验证命令，始终用证据支撑断言。
