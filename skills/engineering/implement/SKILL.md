@@ -13,4 +13,6 @@ description: "基于规格说明或一组工单实现一项工作。"
 
 完成后，使用 /code-review 审查这项工作。
 
+宣称成功之前，使用 /verification-before-completion 技能
+
 将你的工作提交到当前分支。

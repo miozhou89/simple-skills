@@ -1,8 +1,6 @@
 ---
 name: chart-generator
 description: 按照用户自定义的matplotlib规范和antv MCP工具生成各类可视化图表。使用当用户提到生成图表、柱状图、折线图、饼图、散点图、雷达图、可视化数据时触发。
-scope: global
-license: MIT
 ---
 
 
