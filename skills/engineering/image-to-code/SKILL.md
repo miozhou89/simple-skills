@@ -1,121 +1,61 @@
 ---
 name: image-to-code
-description: Convert image designs to production-ready code. Use when user provides a image(a screenshot of the design draft) to build components/pages. Auto-detects framework, reuses existing components, applies accessibility and performance best practices.
+description: 将图片设计稿转换为生产就绪代码。当用户提供图片（设计稿截图）以构建组件/页面时使用。自动检测框架、复用已有组件、应用无障碍与性能最佳实践。
 tools: Read, Write, Edit, Glob, Grep, Bash, WebFetch
 ---
 
 # image to code
 
-## Overview
+## 检测框架
 
-This skill provides a structured workflow for translating image into production-ready code with pixel-perfect accuracy.
-The image is a screenshot of the design draft.
+按配置文件确定框架，使用相应语言、组件扩展名与页面位置：
 
-## Capabilities
-
-- Auto-detect framework (LVGL, Astro, Next.js, React/Vite, Remix, Nuxt, Angular)
-- Scan codebases to find and reuse existing components
-- Use existing animation libraries (never install new ones)
-- Generate code from image recognition
-- Apply accessibility and performance best practices
-
-## Workflow
-
-**Follow these steps in order. Do not skip steps.**
-
-### STEP 1: ANALYZE CODEBASE to Detect Framework
-
-| Config File | Framework | Component Ext | Page Location |
+| 配置文件 | 框架 | 组件扩展名 | 页面位置 |
 |-------------|-----------|---------------|---------------|
 | `lv_conf.h` | LVGL | `.cpp` | `src/gui/` |
 | `astro.config.*` | Astro | `.astro` / `.tsx` | `src/pages/` |
-| `next.config.*` | Next.js | `.tsx` | `app/` or `pages/` |
+| `next.config.*` | Next.js | `.tsx` | `app/` 或 `pages/` |
 | `vite.config.*` + react | React/Vite | `.tsx` | `src/` |
 | `remix.config.*` | Remix | `.tsx` | `app/routes/` |
 | `nuxt.config.*` | Nuxt | `.vue` | `pages/` |
 | `angular.json` | Angular | `.component.ts` | `src/app/` |
 
+## 扫描与复用
 
-### STEP 2: Full Source Scan
-Scan ALL files in `src/`:
-- Reusable components (Button, Card, Input, Badge, Modal)
-- Layout components (Container, Grid, Section, Wrapper)
-- Animation patterns
-- Utility functions
-- Theme tokens (colors, spacing, fonts)
+生成代码前，扫描 `src/` 及 `public/`、`assets/`：
+- 可复用组件（Button、Card、Input、Badge、Modal）与布局组件（Container、Grid、Section、Wrapper）
+- 动画模式、工具函数、主题令牌（颜色、间距、字体）
+- 已有资源的命名约定
 
-### STEP 3: Catalog Assets
+**禁止复制重复：** 存在匹配组件时扩展它而非新建；页面有多个相似 UI 元素时提取为公共组件。
 
-List existing assets in `public/` or `assets/` for naming conventions.
+## 生成代码
 
-### STEP 4: Generate Code
+基于图片与检测到的框架生成代码，使用 context7 mcp server。
 
-Generate code based on the image in Detected Framework, use context7 mcp server.
+整页 → 创建页面文件及所有区块组件
+单个组件 → 仅创建该组件
 
-Whole page → Create page file + all section components
-Single component → Create just that component
+资源匹配：
+- 优先使用框架已有或内置的资源，如图标字体（例如 LVGL 中的 `LV_SYMBOL_*`）。
+- 所需资源不存在时，改用占位符并添加注释说明，禁止编造资源路径。
 
-Before marking complete, validate the final UI against the design draft screenshot.
+标记完成前，必须对照设计稿截图校验最终 UI。
 
-**Validation checklist:**
+## 校验清单
 
-- [ ] Layout matches (spacing, alignment, sizing)
-- [ ] Typography matches (font, size, weight, line height, radius)
-- [ ] Colors(including background colors) match exactly
-- [ ] Interactive states work as designed (hover, active, disabled)
-- [ ] Responsive behavior follows UI/UX design constraints
-- [ ] Assets render correctly
-- [ ] Accessibility standards met
+- [ ] 布局一致（间距、对齐、尺寸）
+- [ ] 排版一致（字体、字号、字重、行高、圆角）
+- [ ] 颜色（含背景色）完全一致
+- [ ] 交互状态按设计工作（hover、active、disabled）
+- [ ] 响应式行为遵循 UI/UX 设计约束
+- [ ] 资源正确渲染
+- [ ] 满足无障碍标准
 
+## 硬性规则
 
-### STEP 5: ITERATE
+- 禁止安装新依赖，禁止基于假设实现——始终参考所提供图片的细节
+- 复用优先：绝不重复创建已有组件
+- 始终保留已有代码模式；所有生成的代码必须生产就绪
 
-Ask: "Does this match your expectation?"
-- Yes → Done
-- No → Ask what to change (whole component, mobile styles, animations, specific element)
-
-Support partial regeneration for tweaks.
-
-## Best Practices
-
-- Prioritize image fidelity to match designs exactly
-- Avoid hardcoded values - extract to constants or use design tokens
-- Follow WCAG requirements for accessibility
-- Add component documentation as needed
-- No barrel imports - import directly from source
-- Tree-shake animations - import only needed functions
-- Lazy load below-fold - `client:visible` or dynamic import
-- Responsive - mobile-first with breakpoint overrides
-- Reuse - Never duplicate existing components; When a matching component exists, extend it rather than creating a new one; When there are multiple similar UI elements on a page, extract them into a common component.
-- Consistent - follow existing codebase patterns
-- Document any new components added to the design system
-- Keep components composable and reusable
-- Never implement based on assumptions. Always refer to the detailed of provided image.
-
-## Notes
-
-- Always preserve existing code patterns
-- Never install new dependencies
-- All generated code should be production-ready
-
-## Examples
-
-### Implementing a UI page
-
-User says: "Implement this page base on the image"
-
-**Actions:**
-
-1. Read and parse the provided image to understand the page structure or layouts.
-2. Identify main sections(header, sidebar, content area, cards) and their child node.
-3. Identify the typography or styles of the page(font, size, weight, line height, radius, colors, background colors)
-4. Identify all assets (logos, icons, charts)
-5. Build layout using project's layout primitives
-6. Implement each section using existing components where possible.
-7. assets matching:
-    - Try to use existing or built-in assets in the framework, such as icon fonts(eg. LV_SYMBOL_* in LVGL).
-    - If the required assets do not exist, use placeholders instead and add comments to explain.
-8. Validate responsive behavior against image constraints
-
-**Result:** Complete page matching provided image with responsive layout.
-
+完成后询问"这符合你的预期吗？"，不支持则按反馈局部重新生成。
