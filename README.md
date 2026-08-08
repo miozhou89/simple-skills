@@ -59,6 +59,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | GitHub Copilot | `~/.agents/skills` |
 | Kimi Code CLI | `~/.agents/skills` |
 | OpenCode | `~/.agents/skills` |
+| pi | `~/.agents/skills` |
 | Warp | `~/.agents/skills` |
 | Zed | `~/.agents/skills` |
 | Claude Code | `~/.claude/skills` |
