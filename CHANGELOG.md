@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.2
+
+### Patch Changes
+
+- add skill-translator
+
 ## 1.3.1
 
 ### Patch Changes
