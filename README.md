@@ -14,8 +14,13 @@
 npx -y simple-skills@latest
 ```
 
-安装到 `~/.agents/skills`；若 `~/.claude` 存在，则同时安装到 `~/.claude/skills`。技能是复制而非链接（npx 缓存会被清理），重新执行命令即可更新。
+技能是复制而非链接（npx 缓存会被清理），重新执行命令即可更新。
 
+升级：
+
+```bash
+npx simple-skills update
+```
 
 ## 卸载
 
@@ -38,7 +43,29 @@ rm -rf ~/.agents/skills
 rm -rf ~/.claude/skills   # 若当初装了这份
 ```
 
-## skills
+## AI Agent的skills安装路径
+
+| Agent | Skills 安装路径 |
+| --- | --- |
+| Agents（通用） | `~/.agents/skills`（始终安装） |
+| Amp | `~/.agents/skills` |
+| Antigravity | `~/.agents/skills` |
+| Antigravity CLI | `~/.agents/skills` |
+| Cline | `~/.agents/skills` |
+| Codex | `~/.agents/skills` |
+| Cursor | `~/.agents/skills` |
+| Deep Agents | `~/.agents/skills` |
+| Gemini CLI | `~/.agents/skills` |
+| GitHub Copilot | `~/.agents/skills` |
+| Kimi Code CLI | `~/.agents/skills` |
+| OpenCode | `~/.agents/skills` |
+| Warp | `~/.agents/skills` |
+| Zed | `~/.agents/skills` |
+| Claude Code | `~/.claude/skills` |
+| Hermes | `~/.hermes/skills` |
+
+
+## Skills 简介
 
 
 | Skill | 用途 |

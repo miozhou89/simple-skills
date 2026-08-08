@@ -3,6 +3,9 @@
 // agent harness:
 //   - ~/.agents/skills  — always (Codex and other Agent Skills-compatible harnesses)
 //   - ~/.claude/skills  — only when ~/.claude exists (Claude Code)
+//   - ~/.hermes/skills  — only when ~/.hermes exists (Hermes)
+//   - ~/.cursor/skills  — only when ~/.cursor exists (Cursor)
+//   - ~/.codex/skills   — only when ~/.codex exists (Codex)
 //
 // npx unpacks this package into an ephemeral cache directory, so skills are
 // COPIED rather than symlinked — symlinks into the cache would break once the
@@ -37,8 +40,10 @@ if (skills.length === 0) {
 }
 
 const targets = [join(HOME, ".agents", "skills")];
-if (existsSync(join(HOME, ".claude"))) {
-  targets.push(join(HOME, ".claude", "skills"));
+for (const agent of [".claude", ".hermes", ".cursor", ".codex"]) {
+  if (existsSync(join(HOME, agent))) {
+    targets.push(join(HOME, agent, "skills"));
+  }
 }
 
 for (const target of targets) {
