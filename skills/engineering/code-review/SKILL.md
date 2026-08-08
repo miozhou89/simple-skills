@@ -1,0 +1,87 @@
+---
+name: code-review
+description: 沿两个轴评审某个固定点（commit、branch、tag 或 merge-base）以来的变更——Standards（代码是否遵循本 repo 文档化的编码规范？）与 Spec（代码是否符合发起 issue/spec 的要求？）。两个评审以并行 sub-agent 运行，结果并排汇报。当用户想评审一个分支、一个 PR、进行中的变更，或要求「review since X」时使用。
+---
+
+对 `HEAD` 与用户提供的固定点之间的 diff 做双轴评审：
+
+- **Standards** — 代码是否符合本 repo 文档化的编码规范？
+- **Spec** — 代码是否忠实实现了发起 issue / spec 的要求？
+
+两个轴都以**并行 sub-agent** 运行，以免互相污染上下文，然后由本 skill 汇总它们的发现。
+
+issue tracker 应当已经提供给你了——如果 `docs/agents/issue-tracker.md` 缺失，运行 `/setup-simple-skills`。
+
+## 流程
+
+### 1. 钉住固定点
+
+用户指定的就是固定点——commit SHA、分支名、tag、`main`、`HEAD~5` 等等。如果没指定，就问。
+
+把 diff 命令一次性记录下来：`git diff <fixed-point>...HEAD`（三点语法，即与 merge-base 比较）。同时用 `git log <fixed-point>..HEAD --oneline` 记下提交列表。
+
+在继续之前，确认固定点可解析（`git rev-parse <fixed-point>`）且 diff 非空。坏引用或空 diff 应当在这里就失败——而不是在两个并行 sub-agent 内部才失败。
+
+### 2. 确定 spec 来源
+
+按以下顺序寻找发起 spec：
+
+1. 提交信息中的 issue 引用（`#123`、`Closes #45`、GitLab `!67` 等）——按 `docs/agents/issue-tracker.md` 中的工作流抓取。
+2. 用户作为参数传入的路径。
+3. `docs/`、`specs/` 或 `.scratch/` 下与分支名或功能匹配的 spec 文件。
+4. 如果都找不到，问用户 spec 在哪。如果用户说没有 spec，**Spec** sub-agent 将跳过并报告 "no spec available"。
+
+### 3. 确定规范来源
+
+repo 中任何记录「代码应该怎么写」的文档，如 `CODING_STANDARDS.md` 或 `CONTRIBUTING.md`。
+
+在 repo 文档之上，Standards 轴永远携带下面的**坏味道基线（smell baseline）**——一组固定的 Fowler 代码坏味道（《重构》第 3 章），即使 repo 什么都没写也适用。它受两条规则约束：
+
+- **repo 规范优先。** 文档化的 repo 规范永远胜出；当它认可了基线会标记的东西时，压制该坏味道。
+- **永远是判断题。** 每个坏味道都是带标签的启发式（"possible Feature Envy"），绝不是硬性违规——并且和这里的任何规范一样，工具已经强制的事一律跳过。
+
+每个坏味道按*是什么* → *怎么修*来读；用它对照 diff：
+
+- **Mysterious Name** — 函数、变量或类型的名字没有揭示它做什么或装什么。→ 重命名；如果想不出诚实的名字，说明设计本身就是浑浊的。
+- **Duplicated Code** — 同样的逻辑形状出现在变更的多个 hunk 或文件中。→ 提取共同形状，两处都调用它。
+- **Feature Envy** — 一个方法伸进另一个对象的数据比用自己的还多。→ 把方法移到它羡慕的数据上。
+- **Data Clumps** — 同样几个字段或参数总是结伴出行（一个想诞生的类型）。→ 打包成一个类型，传那个类型。
+- **Primitive Obsession** — 用原始类型或字符串顶替一个本该有自己类型的领域概念。→ 给这个概念一个小类型。
+- **Repeated Switches** — 针对同一类型的同一个 `switch`/`if` 级联在变更中反复出现。→ 换成多态，或换成两处共享的一张 map。
+- **Shotgun Surgery** — 一个逻辑变更迫使 diff 中许多文件被零散修改。→ 把一起变的东西收进一个模块。
+- **Divergent Change** — 一个文件或模块因为多个不相关的原因被修改。→ 拆开，让每个模块只为一个原因变化。
+- **Speculative Generality** — 为 spec 并不存在的需求添加的抽象、参数或钩子。→ 删掉它；内联回去，等真实需求出现再说。
+- **Message Chains** — 调用方不该依赖的长 `a.b().c().d()` 导航链。→ 把这段行走藏到第一个对象上的一个方法背后。
+- **Middle Man** — 一个基本上只做转发的类或函数。→ 砍掉它，直接调用真正的目标。
+- **Refused Bequest** — 忽略或重写掉大部分继承物的子类或实现者。→ 放弃继承，改用组合。
+
+### 4. 并行启动两个 sub-agent
+
+**Standards sub-agent 的 prompt** — 包含：
+
+- 完整的 diff 命令和提交列表。
+- 第 3 步找到的规范来源文件列表，**外加第 3 步的坏味道基线**全文粘贴——sub-agent 没有其他途径获取它。
+- 简报："汇报——在相关的文件/hunk 级别——(a) diff 违反文档化规范的每一处：引用该规范（文件 + 规则）；(b) 你发现的所有基线坏味道：点名并引用该 hunk。区分硬性违规与判断题——文档化规范的违反可以是硬性违规，但基线坏味道永远是判断题，且文档化的 repo 规范优先于基线。工具已经强制的事一律跳过。400 词以内。"
+
+**Spec sub-agent 的 prompt** — 包含：
+
+- diff 命令和提交列表。
+- spec 的路径或抓取到的内容。
+- 简报："汇报：(a) spec 要求但缺失或只完成了一部分的需求；(b) diff 中没人要求的行为（范围蔓延）；(c) 看似已实现但实现看起来不对的需求。每条发现都要引用对应的 spec 原文行。400 词以内。"
+
+如果 spec 缺失，跳过 Spec sub-agent，并在最终报告中注明。
+
+### 5. 汇总
+
+把两份报告放在 `## Standards` 和 `## Spec` 标题下呈现，原样或稍加清理。**不要**合并或重排发现——两个轴是刻意分开的（见「为什么是双轴」）。
+
+最后用一行总结收尾：每个轴的发现总数，以及*每个轴内部*最严重的问题（如果有）。不要跨轴选出唯一的胜出者——那正是轴分离要防止的重排。
+
+## 为什么是双轴
+
+一个变更可能过一个轴、挂另一个轴：
+
+- 符合每条规范但实现错了东西的代码 → **Standards 过，Spec 挂。**
+- 完全做了 issue 要求的事但破坏项目惯例的代码 → **Spec 过，Standards 挂。**
+
+分开汇报可以阻止一个轴掩盖另一个轴。
