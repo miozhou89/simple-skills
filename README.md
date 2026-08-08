@@ -72,6 +72,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | Skill | 用途 |
 | --- | --- |
 | [ask-route](./skills/engineering/ask-route/SKILL.md) | 询问哪个 skill 或流程适合你的情况。user-invoked skills 之上的路由器 |
+| [requirement-workflow](./skills/engineering/requirement-workflow/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
 | [grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR |
 | [brainstorming](./skills/engineering/brainstorming/SKILL.md) | 在任何创造性工作之前通过协作对话把想法打磨成设计，获用户批准后才进入实现 |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
@@ -79,7 +80,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 并发布到 issue tracker |
 | [to-tickets](./skills/engineering/to-tickets/SKILL.md) | 把任何计划、spec 或对话拆解为一组 tracer-bullet 票据，每张票据声明其阻塞边 |
 | [implement](./skills/engineering/implement/SKILL.md) | 构建 spec 或一组票据描述的工作，在约定 seam 处驱动 `/tdd`，提交前以 `/code-review` 收尾 |
-| [requirement-workflow](./skills/engineering/requirement-workflow/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
 | [wayfinder](./skills/engineering/wayfinder/SKILL.md) | 规划超出一个 agent 会话容量的工作——以决策票据共享地图的形式，一次解决一张 |
 | [systematic-debugging](./skills/engineering/systematic-debugging/SKILL.md) | 修复前先系统化定位根本原因：复现、假设、验证、修复、回归 |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs/SKILL.md) | 针对疑难 bug 和性能回退的纪律化诊断循环：变红反馈回路 → 最小化 → 假设 → 插桩 → 修复 → 回归测试 |

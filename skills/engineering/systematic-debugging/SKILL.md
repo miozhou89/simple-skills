@@ -1,11 +1,6 @@
 ---
 name: systematic-debugging
 description: 遇到任何 bug、测试失败或异常行为时使用，在提出修复方案之前执行
-version: "1.0.0"
-license: MIT
-metadata:
-  hermes:
-    tags: [debugging]
 ---
 
 # 系统化调试
@@ -162,7 +157,7 @@ metadata:
    - 尽可能用自动化测试
    - 没有测试框架就写一次性测试脚本
    - 修复前必须先有测试
-   - 使用 `superpowers:test-driven-development` 技能来编写规范的失败测试
+   - 使用 `/tdd` 技能来编写规范的失败测试
 
 2. **实施单一修复**
    - 修复已定位的根本原因
@@ -174,7 +169,7 @@ metadata:
    - 测试现在通过了吗？
    - 其他测试没有被破坏吧？
    - 问题真的解决了吗？
-   - 宣称成功之前，使用 `superpowers:verification-before-completion` 技能
+   - 宣称成功之前，使用 `/verification-before-completion` 技能
 
 4. **如果修复不起作用**
    - 停下来
@@ -261,12 +256,4 @@ metadata:
 4. 添加监控/日志以便后续排查
 
 **但是：** 95% 的"找不到根因"其实是排查不充分。
-
-## 辅助技术
-
-以下技术是系统化调试的组成部分，可在本目录中找到：
-
-- **`root-cause-tracing.md`** - 沿调用栈反向追踪 bug，找到最初的触发点
-- **`defense-in-depth.md`** - 找到根因后，在多个层级添加校验
-- **`condition-based-waiting.md`** - 用条件轮询替代硬编码等待时间
 

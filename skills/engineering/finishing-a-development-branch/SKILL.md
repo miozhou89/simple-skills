@@ -1,11 +1,6 @@
 ---
 name: finishing-a-development-branch
 description: 当实现完成、所有测试通过、需要决定如何集成这份工作时使用
-version: "1.0.0"
-license: MIT
-metadata:
-  hermes:
-    tags: [git, workflow]
 ---
 
 # 收尾一个开发分支
@@ -155,7 +150,7 @@ git branch -D <feature-branch>
 
 **如果 `GIT_DIR == GIT_COMMON`：** 普通仓库，无 worktree 可清理。结束。
 
-**如果 `WORKTREE_PATH` 在 `.worktrees/` 或 `worktrees/` 之下：** 这是 Superpowers 创建的 worktree——我们负责清理：
+**如果 `WORKTREE_PATH` 在 `.worktrees/` 或 `worktrees/` 之下：** 这是 AI Agent 创建的 worktree——我们负责清理：
 
 ```bash
 git worktree remove "$WORKTREE_PATH"

@@ -1,11 +1,6 @@
 ---
 name: subagent-driven-development
 description: 当在当前会话中执行包含独立任务的实现计划时使用
-version: "1.0.0"
-license: MIT
-metadata:
-  hermes:
-    tags: [agents, development]
 ---
 
 # 子智能体驱动开发
@@ -75,10 +70,10 @@ digraph process {
 
     "准备: 工作树、查账本、读计划、起飞前审查" [shape=box];
     "还有任务?" [shape=diamond];
-    "分派最终代码审查者 (../requesting-code-review/code-reviewer.md)" [shape=box];
+    "分派最终代码审查者 (../code-review/code-reviewer.md)" [shape=box];
     "最终审查有发现? 一次修复分派、一次定向复审、裁定残留项" [shape=box];
     "最终审查干净: 删除本计划的工作区" [shape=box];
-    "使用 superpowers:finishing-a-development-branch" [shape=box style=filled fillcolor=lightgreen];
+    "使用 /finishing-a-development-branch" [shape=box style=filled fillcolor=lightgreen];
 
     "准备: 工作树、查账本、读计划、起飞前审查" -> "分派实现子智能体 (./implementer-prompt.md)";
     "分派实现子智能体 (./implementer-prompt.md)" -> "实现者有疑问?";
@@ -104,21 +99,21 @@ digraph process {
     "把发现连同裁定搁置进账本" -> "往账本追加完成行，标记待办完成";
     "往账本追加完成行，标记待办完成" -> "还有任务?";
     "还有任务?" -> "分派实现子智能体 (./implementer-prompt.md)" [label="是"];
-    "还有任务?" -> "分派最终代码审查者 (../requesting-code-review/code-reviewer.md)" [label="否"];
-    "分派最终代码审查者 (../requesting-code-review/code-reviewer.md)" -> "最终审查有发现? 一次修复分派、一次定向复审、裁定残留项";
+    "还有任务?" -> "分派最终代码审查者 (../code-review/code-reviewer.md)" [label="否"];
+    "分派最终代码审查者 (../code-review/code-reviewer.md)" -> "最终审查有发现? 一次修复分派、一次定向复审、裁定残留项";
     "最终审查有发现? 一次修复分派、一次定向复审、裁定残留项" -> "最终审查干净: 删除本计划的工作区";
-    "最终审查干净: 删除本计划的工作区" -> "使用 superpowers:finishing-a-development-branch";
+    "最终审查干净: 删除本计划的工作区" -> "使用 /finishing-a-development-branch";
 }
 ```
 
 ## 准备
 
-确保工作发生在一个隔离的工作区里：用 superpowers:using-git-worktrees 创建一个，或者核实已有的那个。没有你人类伙伴的明确同意，绝不在 main/master 分支上开始实现。
+确保工作发生在一个隔离的工作区里：用 /using-git-worktrees 创建一个，或者核实已有的那个。没有你人类伙伴的明确同意，绝不在 main/master 分支上开始实现。
 
 会话记忆无法在上下文压缩（compaction）中存活。在真实会话里，丢失了位置的控制者曾重新分派整段已经完成的任务序列——这是观察到的最昂贵的失败。把进度记在一个账本文件里，而不只是记在待办里。
 
-- **每个计划拥有自己的工作区：** 技能启动时，运行本技能的 `scripts/sdd-workspace PLAN_FILE`——它会打印这个计划专属的、被 git 忽略的目录（`<repo-root>/.superpowers/sdd/<计划文件名>/`），**本计划**的一切产物都放在那里：账本、简报、报告、审查包。别的计划的目录不属于你，不读也不写。
-- 到 `<工作区>/progress.md` 查本计划的账本。如果它的第一行点名的是你的计划文件，那么带有 `Task <N>: complete` 行的任务就是**已完成**——不要重新分派它们；从第一个没有该行的任务处继续。如果某个任务的最后一行是一轮修复，说明它正卡在修复循环中：从下一轮继续。如果账本第一行点名的是**另一个**计划文件——或者你在旧的扁平路径 `.superpowers/sdd/progress.md` 发现了一个游离的账本——那是别人的进度：原地别动，另起你自己的新账本。
+- **每个计划拥有自己的工作区：** 技能启动时，运行本技能的 `scripts/sdd-workspace PLAN_FILE`——它会打印这个计划专属的、被 git 忽略的目录（`<repo-root>/docs/sdd/<计划文件名>/`），**本计划**的一切产物都放在那里：账本、简报、报告、审查包。别的计划的目录不属于你，不读也不写。
+- 到 `<工作区>/progress.md` 查本计划的账本。如果它的第一行点名的是你的计划文件，那么带有 `Task <N>: complete` 行的任务就是**已完成**——不要重新分派它们；从第一个没有该行的任务处继续。如果某个任务的最后一行是一轮修复，说明它正卡在修复循环中：从下一轮继续。如果账本第一行点名的是**另一个**计划文件——或者你在旧的扁平路径 `docs/sdd/progress.md` 发现了一个游离的账本——那是别人的进度：原地别动，另起你自己的新账本。
 - 创建账本时，把它的身份写在第一行：`# SDD ledger — plan: <计划文件路径>`。
 - 这个账本是你的恢复地图：它点名的那些提交，即使你的上下文已经不记得创建过它们，也确实存在于 git 中。压缩之后，相信账本和 `git log`，而不是你自己的记忆。
 - `git clean -fdx` 会毁掉这个工作区（它是被 git 忽略的临时文件）；万一发生了，就从 `git log` 恢复。
@@ -250,7 +245,7 @@ digraph process {
 
 ## 最终审查
 
-覆盖整个分支的最终审查也拿到一个审查包：运行 `scripts/review-package PLAN_FILE MERGE_BASE HEAD`（MERGE_BASE = 分支起点的那个提交，例如 `git merge-base main HEAD`），把打印出的路径放进最终审查的分派里，这样最终审查者读一个文件就行，不必用 git 命令重新推导整个分支的 diff。用可用的最强模型分派（见"模型选择"），使用 superpowers:requesting-code-review 的 [code-reviewer.md](../requesting-code-review/code-reviewer.md)。把它指向账本里那些"延后的 Minor"和"已搁置"的行，让它甄别哪些必须在合并前修掉。
+覆盖整个分支的最终审查也拿到一个审查包：运行 `scripts/review-package PLAN_FILE MERGE_BASE HEAD`（MERGE_BASE = 分支起点的那个提交，例如 `git merge-base main HEAD`），把打印出的路径放进最终审查的分派里，这样最终审查者读一个文件就行，不必用 git 命令重新推导整个分支的 diff。用可用的最强模型分派（见"模型选择"），使用 /code-review 的 [code-reviewer.md](../code-review/code-reviewer.md)。把它指向账本里那些"延后的 Minor"和"已搁置"的行，让它甄别哪些必须在合并前修掉。
 
 如果覆盖整个分支的最终审查返回了发现，用**一个**修复子智能体带着**完整的**发现清单去分派——不要一条发现一个修复者。逐条发现各派一个修复者，每个都要重建上下文、重跑测试套件；真实会话里，一次最终审查的修复浪潮花掉的成本超过它全部任务的总和。然后对这波修复跑**恰好一次**定向复审（对修复区间跑 `scripts/review-package PLAN_FILE FIX_BASE HEAD`，用 [re-review-prompt.md](re-review-prompt.md)）。残留的发现按任务循环里熔断那套来裁定：带裁定搁置，或者在承重项上停下。**没有第二波修复**——残留的承重发现会在 finishing-a-development-branch 呈现选项时浮到你人类伙伴面前。
 
@@ -258,7 +253,7 @@ digraph process {
 
 当覆盖整个分支的最终审查干净、且它的修复已合并时，删除**本计划**的工作区（`rm -rf <工作区>`）——现在 git 历史就是记录了。同级目录属于别的计划，别去动它们。
 
-使用 superpowers:finishing-a-development-branch。
+使用 /finishing-a-development-branch。
 
 ## 常见的合理化借口
 
@@ -279,8 +274,8 @@ digraph process {
 你：我正在用子智能体驱动开发来执行这个计划。
 
 [准备：工作树已核实]
-[把计划文件读一遍：docs/superpowers/plans/feature-plan.md]
-[解析工作区：scripts/sdd-workspace docs/superpowers/plans/feature-plan.md —— 里面没有账本，全新开始]
+[把计划文件读一遍：docs/plans/feature-plan.md]
+[解析工作区：scripts/sdd-workspace docs/plans/feature-plan.md —— 里面没有账本，全新开始]
 [为所有任务创建待办]
 
 任务 1：Hook 安装脚本
@@ -289,7 +284,7 @@ digraph process {
 
 实现者："开始之前——这个 hook 应该装在用户级还是系统级？"
 
-你："用户级（~/.config/superpowers/hooks/）"
+你："用户级（~/.config/hooks/）"
 
 实现者：[稍后]
   - 实现了 install-hook 命令
@@ -337,5 +332,5 @@ digraph process {
 
 [删除本计划的工作区 —— 现在记录活在 git 里]
 
-搞定！使用 superpowers:finishing-a-development-branch。
+搞定！使用 /finishing-a-development-branch。
 ```
