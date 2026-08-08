@@ -3,12 +3,17 @@
 // Runs as part of `npm run version`, immediately after `changeset version`.
 // With --check it changes nothing and exits 1 if the two versions differ.
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repo = join(dirname(fileURLToPath(import.meta.url)), "..");
 const pluginPath = join(repo, ".claude-plugin", "plugin.json");
+
+if (!existsSync(pluginPath)) {
+  console.warn(`No ${pluginPath} — skipping plugin version sync.`);
+  process.exit(0);
+}
 
 const { version } = JSON.parse(readFileSync(join(repo, "package.json"), "utf8"));
 const source = readFileSync(pluginPath, "utf8");
