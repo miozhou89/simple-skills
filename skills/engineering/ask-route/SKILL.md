@@ -50,6 +50,7 @@ disable-model-invocation: true
 不是功能开发——是保养。
 
 - **`/improve-codebase-architecture`** — 一有空闲就运行，让代码库始终适合 agent 在其中工作。它会浮现**深化机会（deepening opportunities）**；选中一个就会_产生一个想法_，你可以带着它在 `/grill-with-docs` 处进入主流程。它是负责找出候选者的勘测；**`/codebase-design`**（见下）是你在上面设计选中者的操作台。
+- **`/performance`** — 性能分析与优化：数量级成本估算 → 剖析定位热点（pprof/perf/微基准）→ 应用优化技术 → 微基准验证。当用户要优化速度、资源或延迟，或问「哪里慢、怎么优化」时使用。若报告的是「最近变慢了」的回归，走 `/diagnosing-bugs`。
 
 ## 底层词汇层
 

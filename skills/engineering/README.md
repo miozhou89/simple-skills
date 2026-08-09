@@ -37,6 +37,7 @@
 - **[frontend-design](./frontend-design/SKILL.md)** — 创建有设计感、生产级的前端界面，视觉与代码质量并重。
 - **[image-to-code](./image-to-code/SKILL.md)** — 把设计稿截图转成生产级代码，自动检测框架、复用现有组件。
 - **[pdf](./pdf/SKILL.md)** — 处理 PDF 的一切操作：读取/提取、合并、拆分、旋转、水印、表单、加密解密、OCR。
+- **[performance](./performance/SKILL.md)** — 性能分析与优化：数量级成本估算 → 剖析（pprof/perf/微基准）→ 优化技术目录（算法/内存表示/分配/并行/API/Protobuf）→ 验证。
 - **[playwright-cli](./playwright-cli/SKILL.md)** — 用 playwright-cli 自动化浏览器交互、测试网页并生成测试代码。
 - **[pptx](./pptx/SKILL.md)** — 处理一切涉及 .pptx 的工作：创建、读取、提取、编辑、合并拆分演示文稿。
 - **[skill-creator](./skill-creator/SKILL.md)** — 创建、迭代改进 skill，并用 eval 与方差分析基准衡量性能。
