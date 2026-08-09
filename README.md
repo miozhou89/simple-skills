@@ -100,10 +100,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [pptx](./skills/engineering/pptx/SKILL.md) | 处理一切涉及 .pptx 的工作：创建、读取、提取、编辑、合并拆分演示文稿 |
 | [skill-creator](./skills/engineering/skill-creator/SKILL.md) | 创建、迭代改进 skill，并用 eval 与方差分析基准衡量性能 |
 | [skill-translator](./skills/engineering/skill-translator/SKILL.md) | 批量翻译 skills 目录或文档树到目标语言，生成结构一致的副本并执行技能精简 |
-| [software-architecture](./skills/engineering/software-architecture/SKILL.md) | 基于 Clean Architecture 与 DDD 的质量导向架构与编码指导 |
-| [subagent-driven-development](./skills/engineering/subagent-driven-development/SKILL.md) | 为计划中每个任务分派全新实现子 agent，配任务审查与结尾宽范围审查 |
-| [theme-factory](./skills/engineering/theme-factory/SKILL.md) | 用预设专业配色/字体主题或即时生成的新主题为工件添加一致样式 |
-| [using-git-worktrees](./skills/engineering/using-git-worktrees/SKILL.md) | 确保工作在隔离工作区中——优先原生 worktree 工具，必要时回退 git worktree |
 | [verification-before-completion](./skills/engineering/verification-before-completion/SKILL.md) | 宣称完成或修复前必须运行验证命令，始终用证据支撑断言 |
 | [xlsx](./skills/engineering/xlsx/SKILL.md) | 处理电子表格（.xlsx/.xlsm/.csv/.tsv）：读写编辑、创建、转换与清理 |
 
