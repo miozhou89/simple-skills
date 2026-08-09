@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.6
+
+### Patch Changes
+
+- add performance skill
+
 ## 1.3.5
 
 ### Patch Changes
