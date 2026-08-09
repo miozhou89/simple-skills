@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.4
+
+### Patch Changes
+
+- add docx skill, remove theme-factory skill
+
 ## 1.3.3
 
 ### Patch Changes
