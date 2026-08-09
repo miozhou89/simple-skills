@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.5
+
+### Patch Changes
+
+- 删除废弃的 skill
+
 ## 1.3.4
 
 ### Patch Changes
