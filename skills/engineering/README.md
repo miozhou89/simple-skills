@@ -7,7 +7,7 @@
 只有当你手动输入时才可触达（Claude Code：`disable-model-invocation: true`；Codex：`agents/openai.yaml` 中的 `policy.allow_implicit_invocation: false`）。
 
 - **[ask-route](./ask-route/SKILL.md)** — 询问哪个 skill 或流程适合你的情况。这是本仓库中 user-invoked skills 之上的路由器。
-- **[grill-with-docs](./grill-with-docs/SKILL.md)** — 盘问式会话，同时构建项目的领域模型，在过程中打磨术语并就地更新 `CONTEXT.md` 和 ADR。
+- **[explore](./explore/SKILL.md)** — 盘问式会话，同时构建项目的领域模型，在过程中打磨术语并就地更新 `CONTEXT.md` 和 ADR。
 - **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)** — 扫描代码库寻找深化（deepening）机会，以可视化 HTML 报告呈现，然后对你选中的机会进行盘问。
 - **[setup-simple-skills](./setup-simple-skills/SKILL.md)** — 为 engineering skills 配置本仓库（issue tracker、领域文档布局）。每个仓库运行一次。
 - **[to-spec](./to-spec/SKILL.md)** — 把当前对话转化为一份 spec 并发布到 issue tracker。

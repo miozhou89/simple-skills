@@ -8,7 +8,7 @@ engineering skills 在探索代码库时应如何消费本仓库的领域文档�
 - 仓库根目录的 **`CONTEXT-MAP.md`**（如果存在）——它指向每个上下文各自的 `CONTEXT.md`。阅读与主题相关的每一个。
 - **`docs/adr/`** — 阅读涉及你即将工作区域的 ADR。在多上下文仓库中，还要检查 `src/<context>/docs/adr/` 中的上下文级决策。
 
-如果这些文件中有任何一个不存在，**静默继续**。不要指出它们的缺失；不要建议提前创建它们。`/domain-modeling` skill（经由 `/grill-with-docs` 和 `/improve-codebase-architecture` 触达）会在术语或决策真正得到解决时惰性创建它们。
+如果这些文件中有任何一个不存在，**静默继续**。不要指出它们的缺失；不要建议提前创建它们。`/domain-modeling` skill（经由 `/explore` 和 `/improve-codebase-architecture` 触达）会在术语或决策真正得到解决时惰性创建它们。
 
 ## 文件结构
 

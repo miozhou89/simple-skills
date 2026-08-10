@@ -73,8 +73,8 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | --- | --- |
 | [ask-route](./skills/engineering/ask-route/SKILL.md) | 询问哪个 skill 或流程适合你的情况。user-invoked skills 之上的路由器 |
 | [requirement-workflow](./skills/engineering/requirement-workflow/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
-| [grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR |
 | [brainstorming](./skills/engineering/brainstorming/SKILL.md) | 在任何创造性工作之前通过协作对话把想法打磨成设计，获用户批准后才进入实现 |
+| [explore](./skills/engineering/explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
 | [setup-simple-skills](./skills/engineering/setup-simple-skills/SKILL.md) | 为 engineering skills 配置本仓库（issue tracker、领域文档布局）。每个仓库运行一次 |
 | [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 并发布到 issue tracker |
@@ -111,12 +111,13 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 /setup-simple-skills
 
 # 1. 设计
-/brainstorming <需求> # 指定一个需求，进行头脑风暴，给出多个可能的解决方案 
-/grill-with-docs  # 通过提问澄清需求，产出文档：CONTEXT.md、docs/adr/*
-/grill-me
-# 注：/grill-* 的成本比你想象的高。
+# 指定一个需求，进行头脑风暴，给出多个可能的解决方案。适用于需求描述较明确或粒度较小的任务。
+/brainstorming <需求> 
+# 通过提问澄清需求，产出文档：CONTEXT.md、docs/adr/*
+/explore
+# 注：/grill 的成本比你想象的高。
 # 如果你在一个节奏很快的团队里，每个功能开始前都要做这个流程，
-# 会遭到抵触。更实际的做法是：只对高风险、高耦合的功能模块使用，小改动跳过。
+# 会遭到抵触。更实际的做法是：只对高风险、高耦合的功能模块使用，小改动跳过或使用 /brainstorming
 
 # 2. 编写方案、规格
 /to-spec

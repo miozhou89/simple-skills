@@ -17,9 +17,9 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 > 只对高风险、高耦合的功能做。节奏快的团队、小改动直接跳过，从规格开始。
 
-- **`/brainstorming`** — 给出多个可行方案，供用户挑选
-- **`/grill-with-docs`** — 通过提问澄清需求，产出文档：`CONTEXT.md`、`docs/adr/*`（有工作目录时）
-- **注**：`/grill-*` 成本比想象的高。只对高风险、高耦合的功能模块使用，小改动跳过。
+- **`/brainstorming`** — 给出多个可行方案，供用户挑选，适用于需求描述较明确或粒度较小的任务。
+- **`/explore`** — 通过提问澄清需求，产出文档：`CONTEXT.md`、`docs/adr/*`（`docs/adr` 目录若不存在则使用 `setup-simple-skills` 对项目进行设置）
+- **注**：`/explore` 成本比想象的高。只对高风险、高耦合的功能模块使用，小改动跳过。
 
 ## 2. 编写方案、规格
 
@@ -40,7 +40,11 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 - **`/code-review`** — 对 diff 做双轴评审：Standards + Spec。以并行子 agent 运行。
 
-## 6. 维护
+## 6. 验证
+
+宣称成功之前，使用 /verification-before-completion 技能。
+
+## 7. 维护
 
 按用户处境路由：
 
@@ -55,7 +59,7 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 | 用户要求 | 路由到 |
 | --- | --- |
 | 头脑风暴/多方案 | `/brainstorming` |
-| 澄清需求、产出文档 | `/grill-with-docs` / `/grill-me` |
+| 澄清需求、产出文档 | `/explore` |
 | 把讨论写成规格 | `/to-spec` |
 | 大需求拆分 | `/to-tickets` |
 | 按规格实施 | `/implement` |
