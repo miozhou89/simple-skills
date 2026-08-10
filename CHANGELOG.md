@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.7
+
+### Patch Changes
+
+- 整理技能
+
 ## 1.3.6
 
 ### Patch Changes
