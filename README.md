@@ -115,9 +115,8 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 /brainstorming <需求> 
 # 通过提问澄清需求，产出文档：CONTEXT.md、docs/adr/*
 /explore
-# 注：/grill 的成本比你想象的高。
-# 如果你在一个节奏很快的团队里，每个功能开始前都要做这个流程，
-# 会遭到抵触。更实际的做法是：只对高风险、高耦合的功能模块使用，小改动跳过或使用 /brainstorming
+# 注：/explore 的成本比你想象的高。
+# 更实际的做法是：只对高风险、高耦合的功能模块使用，小改动跳过或使用 /brainstorming
 
 # 2. 编写方案、规格
 /to-spec
