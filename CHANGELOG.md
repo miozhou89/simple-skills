@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.9
+
+### Patch Changes
+
+- 合并 docx、pptx、xlsx 为 officedocs
+
 ## 1.3.8
 
 ### Patch Changes
