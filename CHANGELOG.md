@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.10
+
+### Patch Changes
+
+- simplify to-spec
+
 ## 1.3.9
 
 ### Patch Changes
