@@ -14,7 +14,6 @@ description: 沿两个轴评审某个固定点（commit、branch、tag 或 merge
 
 两个轴都以**并行 sub-agent** 运行，以免互相污染上下文，然后由本 skill 汇总它们的发现。
 
-issue tracker 应当已经提供给你了——如果 `docs/agents/issue-tracker.md` 缺失，运行 `/setup-simple-skills`。
 
 **核心原则：** 早审查，勤审查。
 

@@ -77,7 +77,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [explore](./skills/engineering/explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
 | [setup-simple-skills](./skills/engineering/setup-simple-skills/SKILL.md) | 为 engineering skills 配置本仓库（issue tracker、领域文档布局）。每个仓库运行一次 |
-| [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 并发布到 issue tracker |
+| [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 文档 |
 | [to-tickets](./skills/engineering/to-tickets/SKILL.md) | 把任何计划、spec 或对话拆解为一组 tracer-bullet 票据，每张票据声明其阻塞边 |
 | [implement](./skills/engineering/implement/SKILL.md) | 构建 spec 或一组票据描述的工作，在约定 seam 处驱动 `/tdd`，提交前以 `/code-review` 收尾 |
 | [wayfinder](./skills/engineering/wayfinder/SKILL.md) | 规划超出一个 agent 会话容量的工作——以决策票据共享地图的形式，一次解决一张 |

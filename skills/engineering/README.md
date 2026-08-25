@@ -10,7 +10,7 @@
 - **[explore](./explore/SKILL.md)** — 盘问式会话，同时构建项目的领域模型，在过程中打磨术语并就地更新 `CONTEXT.md` 和 ADR。
 - **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)** — 扫描代码库寻找深化（deepening）机会，以可视化 HTML 报告呈现，然后对你选中的机会进行盘问。
 - **[setup-simple-skills](./setup-simple-skills/SKILL.md)** — 为 engineering skills 配置本仓库（issue tracker、领域文档布局）。每个仓库运行一次。
-- **[to-spec](./to-spec/SKILL.md)** — 把当前对话转化为一份 spec 并发布到 issue tracker。
+- **[to-spec](./to-spec/SKILL.md)** — 把当前对话转化为一份 spec 文档。
 - **[to-tickets](./to-tickets/SKILL.md)** — 把任何计划、spec 或对话拆解为一组 tracer-bullet 票据，每张票据声明其阻塞边——本地以文本形式写在一个文件中，或在真实 tracker 上使用原生阻塞链接。
 - **[implement](./implement/SKILL.md)** — 构建 spec 或一组票据所描述的工作，在预先约定的 seam 处驱动 `/tdd`，并在提交前以 `/code-review` 收尾。
 - **[wayfinder](./wayfinder/SKILL.md)** — 规划一大块超出一个 agent 会话容量的工作——在 issue tracker 上以决策票据共享地图的形式呈现，一次解决一张，直到通往目标的路径清晰。

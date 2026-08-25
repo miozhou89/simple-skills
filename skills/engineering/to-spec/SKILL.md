@@ -1,6 +1,6 @@
 ---
 name: to-spec
-description: 把当前对话转化为一份 spec 并发布到项目 issue tracker——不做访谈，只综合你们已经讨论过的内容。
+description: 把当前对话转化为一份 spec 并发布到 docs/spec/ 目录——不做访谈，只综合你们已经讨论过的内容。
 ---
 
 本 skill 接收当前对话上下文和代码库理解，产出一份 spec。不要访谈用户——只综合你已经知道的内容。
@@ -16,7 +16,7 @@ spec文档存放目录： docs/spec/，若不存在则创建。
 
 与用户确认这些 seam 符合他们的预期。
 
-3. 使用下面的模板编写 spec，然后发布到项目 issue tracker。
+3. 使用下面的模板编写 spec。
 
 <spec-template>
 
