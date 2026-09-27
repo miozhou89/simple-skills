@@ -74,7 +74,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [ask-route](./skills/engineering/ask-route/SKILL.md) | 询问哪个 skill 或流程适合你的情况。user-invoked skills 之上的路由器 |
 | [requirement-workflow](./skills/engineering/requirement-workflow/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
 | [brainstorming](./skills/engineering/brainstorming/SKILL.md) | 在任何创造性工作之前通过协作对话把想法打磨成设计，获用户批准后才进入实现 |
-| [explore](./skills/engineering/explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR |
+| [explore](./skills/engineering/explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR（Architecture Decision Record，架构决策记录） |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
 | [setup-simple-skills](./skills/engineering/setup-simple-skills/SKILL.md) | 为 engineering skills 配置本仓库（issue tracker、领域文档布局）。每个仓库运行一次 |
 | [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 文档 |
