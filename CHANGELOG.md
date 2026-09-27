@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.3.11
+
+### Patch Changes
+
+- update branstorming skill
+
 ## 1.3.10
 
 ### Patch Changes
