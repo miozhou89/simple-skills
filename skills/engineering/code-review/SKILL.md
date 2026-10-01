@@ -69,7 +69,7 @@ description: 沿两个轴评审某个固定点（commit、branch、tag 或 merge
 
 1. 提交信息中的 issue 引用（`#123`、`Closes #45`、GitLab `!67` 等）——按 `docs/agents/issue-tracker.md` 中的工作流抓取。
 2. 用户作为参数传入的路径。
-3. `docs/`、`specs/` 或 `.scratch/` 下与分支名或功能匹配的 spec 文件。
+3. `docs/changes/<capability-path>/` 下与分支名或功能匹配的变更文档（如 `spec.md`、`proposal.md`）。
 4. 如果都找不到，问用户 spec 在哪。如果用户说没有 spec，**Spec** sub-agent 将跳过并报告 "no spec available"。
 
 ### 3. 确定规范来源

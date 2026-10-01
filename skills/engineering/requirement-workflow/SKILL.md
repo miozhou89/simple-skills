@@ -13,23 +13,41 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 设计 → 规格 → [票据] → 实施 → 评审 → 验证
 ```
 
+## 变更文档目录
+
+每个需求变更的所有产出文档集中存放在 `docs/changes/<capability-path>/`：
+
+- 开始一个新变更时，根据对话上下文为它命名 `<capability-path>`（如 `add-dark-mode`），创建目录 `docs/changes/<capability-path>/`。
+- 起草 `proposal.md`（为什么要做这个、什么在变）放入该目录，与用户确认后作为本次变更的入口文档。
+- 同一会话中后续各阶段 skill 的输出文档都写入同一目录：
+
+| 文件 | 内容 | 由谁产出 |
+| --- | --- | --- |
+| `proposal.md` | 为什么要做这个、什么在变 | 本流程（需求确认时起草） |
+| `design.md` | 技术方案 | `/brainstorming` 或 `/explore` |
+| `spec.md` | 需求和场景 | `/to-spec` |
+| `plans.md` | 实现清单 | `/to-plans` |
+| `issues/<NN>-<slug>.md` | 拆分的票据（本地 tracker 时） | `/to-tickets` |
+
+- 不要把变更文档散落到 `docs/spec/`、`docs/plans/` 等其他目录；跨变更的领域词汇与 ADR 仍归 `CONTEXT.md` 和 `docs/adr/` 管。
+
 ## 1. 设计
 
 > 只对高风险、高耦合的功能做。节奏快的团队、小改动直接跳过，从规格开始。
 
-- **`/brainstorming`** — 给出多个可行方案，供用户挑选，适用于需求描述较明确或粒度较小的任务。
+- **`/brainstorming`** — 给出多个可行方案，供用户挑选，适用于需求描述较明确或粒度较小的任务。设计定稿后写入 `docs/changes/<capability-path>/design.md`。
 - **`/explore`** — 通过提问澄清需求，产出文档：`CONTEXT.md`、`docs/adr/*`（`docs/adr` 目录若不存在则使用 `setup-simple-skills` 对项目进行设置）
 - **注**：`/explore` 成本较高，只有在当需求描述模糊时，通过提问和探索澄清需求，小改动跳过。
 
 ## 2. 编写方案、规格
 
-- **`/to-spec`** — 把当前对话转化为一份 spec 文档。不做访谈，只综合已讨论内容。
+- **`/to-spec`** — 把当前对话转化为一份 spec 文档，写入 `docs/changes/<capability-path>/spec.md`。不做访谈，只综合已讨论内容。
 
 ## 3. 拆分成多个可追踪的 ticket（可选）
 
 > 大需求推荐，小需求跳过。
 
-- **`/to-tickets`** — 把 spec 拆成一组 tracer-bullet 票据，每张声明其阻塞边。
+- **`/to-tickets`** — 把 spec 拆成一组 tracer-bullet 票据，每张声明其阻塞边。本地 tracker 时写入 `docs/changes/<capability-path>/issues/`。
 
 ## 4. 实施
 

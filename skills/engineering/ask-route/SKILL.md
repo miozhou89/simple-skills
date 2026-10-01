@@ -22,7 +22,7 @@ disable-model-invocation: true
    - **`/prototype`** 用一次性代码回答这个问题，
    - **`/handoff`** 把你学到的东西带回来，并在最初的想法线程中引用它。
 3. **分支——这是一个跨多个会话的构建吗？**
-   - **是** → **`/to-spec`**（把线程变成一份 spec），然后 **`/to-tickets`** 将其拆分为 tracer-bullet 式的工单，每个工单声明自己的 **blocking edges（阻塞边）**。在本地 tracker 上，每个工单是 `.scratch/<feature>/issues/` 下的一个文件，手工按阻塞优先的顺序处理；在真实的 tracker 上，这些边会变成原生的阻塞链接，于是任何阻塞项已完成的工单都可以被领取——为每个工单启动 **`/implement`**，并在每两个之间 **`/clear`** 上下文。每个工单都是自包含的，所以上一个工单的上下文用完即可丢弃。
+   - **是** → **`/to-spec`**（把线程变成一份 spec），然后 **`/to-tickets`** 将其拆分为 tracer-bullet 式的工单，每个工单声明自己的 **blocking edges（阻塞边）**。在本地 tracker 上，每个工单是当前变更目录 `docs/changes/<capability-path>/issues/` 下的一个文件，手工按阻塞优先的顺序处理；在真实的 tracker 上，这些边会变成原生的阻塞链接，于是任何阻塞项已完成的工单都可以被领取——为每个工单启动 **`/implement`**，并在每两个之间 **`/clear`** 上下文。每个工单都是自包含的，所以上一个工单的上下文用完即可丢弃。
    - **否** → 就在此处、在同一个上下文窗口里 **`/implement`**。
 
    无论哪种方式，**`/implement`** 都会通过内部驱动 **`/tdd`** 来构建每个 issue——一次一个红绿切片——然后在提交前运行 **`/code-review`** 收尾，即对 diff 做双轴评审（Standards + Spec）。当你只想在没有完整 spec 的情况下以测试先行的方式构建一个具体行为时，单独使用 **`/tdd`**；当你想针对某个固定点评审一个分支或 PR 时，单独使用 **`/code-review`**。

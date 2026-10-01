@@ -1,6 +1,7 @@
 ---
 name: to-tickets
 description: 把计划、spec 或当前对话拆解为一组 tracer-bullet 票据，每张票据声明其阻塞边，发布到配置好的 tracker——本地以文本形式每票据一个文件，或在真实 tracker 上使用原生阻塞链接。
+disable-model-invocation: true
 ---
 
 # To Tickets
@@ -57,7 +58,7 @@ description: 把计划、spec 或当前对话拆解为一组 tracer-bullet 票�
 
 发布批准的票据。**方式**取决于 `/setup-simple-skills` 配置的 tracker——无论哪种方式票据都相同，只有阻塞边的形态会变化：
 
-- **本地文件** → 在 `.scratch/<feature-slug>/issues/<NN>-<slug>.md` 下每票据写一个文件，按依赖顺序从 `01` 开始编号（阻塞方在前）。每个文件的 "Blocked by" 列出它依赖的编号/标题。使用下面的单票据文件模板——每票据一个文件，绝不使用单个合并文件。
+- **本地文件** → 在当前变更目录 `docs/changes/<capability-path>/issues/<NN>-<slug>.md` 下每票据写一个文件（沿用会话中已创建的变更目录，否则按变更命名并创建），按依赖顺序从 `01` 开始编号（阻塞方在前）。每个文件的 "Blocked by" 列出它依赖的编号/标题。使用下面的单票据文件模板——每票据一个文件，绝不使用单个合并文件。
 - **真实 issue tracker（GitHub、Linear……）** → 按依赖顺序（阻塞方在前）每票据发布一个 issue，使每张票据的阻塞边可以引用真实标识符。平台有原生阻塞 / 子 issue 关系时使用它；否则把每张票据的 "Blocked by" 设为阻塞它的 issue。
 
 从 **frontier** 开始工作：所有阻塞方都已完成的任何票据。对于纯线性链条，这意味着从上到下。

@@ -24,7 +24,7 @@ disable-model-invocation: true
 - 仓库根目录的 `CONTEXT.md` 和 `CONTEXT-MAP.md`
 - `docs/adr/` 以及任何 `src/*/docs/adr/` 目录
 - `docs/agents/` — 此 skill 之前的输出是否已存在？
-- `.scratch/` — 表明已在使用的本地 markdown issue tracker 约定的迹象
+- `docs/changes/` — 表明已在使用的按变更组织的文档/本地票据目录约定的迹象
 - Monorepo 信号 — `pnpm-workspace.yaml`、`package.json` 中的 `workspaces` 字段，或填充完整且各包带有自己 `src/` 的 `packages/*`。只在真正的大型多包仓库中出现；它们的缺席意味着单上下文，这几乎是所有仓库的情况。
 
 ### 2. 呈现发现并提问
@@ -35,12 +35,12 @@ disable-model-invocation: true
 
 **Section A — Issue tracker。**
 
-> 说明："issue tracker" 是本仓库 issue 存放的地方。`to-tickets` 和 `to-spec` 等 skills 会读取和写入它——它们需要知道是调用 `gh issue create`、在 `.scratch/` 下写 markdown 文件，还是遵循你描述的其他工作流。请选择你实际跟踪本仓库工作的地方。
+> 说明："issue tracker" 是本仓库 issue 存放的地方。`to-tickets` 和 `to-spec` 等 skills 会读取和写入它——它们需要知道是调用 `gh issue create`、在 `docs/changes/<capability-path>/` 下写 markdown 文件，还是遵循你描述的其他工作流。请选择你实际跟踪本仓库工作的地方。
 
 默认本地 markdown。
 这些 skills 是为 GitHub 设计的。如果 `git remote` 指向 GitHub，就提议 GitHub。否则（或用户偏好时），提供：
 
-- **本地 markdown** — issue 以文件形式存放在本仓库的 `.scratch/<feature>/` 下
+- **本地 markdown** — issue 以文件形式存放在本仓库的 `docs/changes/<capability-path>/issues/` 下
 - **GitHub** — issue 存放在仓库的 GitHub Issues 中（使用 `gh` CLI）
 - **GitLab** — issue 存放在仓库的 GitLab Issues 中（使用 [`glab`](https://gitlab.com/gitlab-org/cli) CLI）
 - **其他**（Jira、Linear 等）— 请用户用一段话描述工作流；skill 会将其记录为自由格式的文字

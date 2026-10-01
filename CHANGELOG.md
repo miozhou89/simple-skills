@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.4.0
+
+### Minor Changes
+
+- 文档目录规范
+
 ## 1.3.12
 
 ### Patch Changes

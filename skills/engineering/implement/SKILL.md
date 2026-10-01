@@ -1,6 +1,7 @@
 ---
 name: implement
 description: "基于规格说明或一组工单实现一项工作。"
+disable-model-invocation: true
 ---
 
 实现用户在规格说明或plan.md中描述的工作。

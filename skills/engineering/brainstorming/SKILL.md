@@ -22,7 +22,7 @@ description: "在任何创造性工作之前必须使用此技能——创建功
    - 范围适当时每次一个问题；一个主题需更多探索就拆成多个问题。尽量用选择题，开放式问题也可。
 3. **提出 2-3 种方案** — 附权衡分析和推荐。以对话方式展示选项，先讲推荐方案及理由。严格遵循 YAGNI，移除每个方案和设计里的不必要功能。
 4. **分节展示设计** — 涵盖架构、组件、数据流、错误处理、测试。每节篇幅匹配复杂度：简单几句话，复杂最多 200-300 字。每节展示后询问是否正确，随时回头澄清不明确之处。
-5. **编写设计文档** — 保存到 `docs/specs/YYYY-MM-DD-<topic>-design.md` 并 commit（用户对位置的偏好优先于此默认值）。若可用，使用 elements-of-style:writing-clearly-and-concisely 技能。
+5. **编写设计文档** — 保存到当前变更目录下的 `docs/changes/<capability-path>/design.md` 并 commit（`<capability-path>` 按变更命名，如 `add-dark-mode`；若处于 requirement-workflow 流程中，沿用其已创建的变更目录；用户对位置的偏好优先于此默认值）。若可用，使用 elements-of-style:writing-clearly-and-concisely 技能。
 6. **规格自检** — 编写后以全新视角审视：
    - **占位符扫描：** 有没有"待定"、TODO、未完成章节或模糊需求？修复。
    - **内部一致性：** 章节间有无矛盾？架构与功能描述匹配吗？

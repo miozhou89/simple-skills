@@ -4,6 +4,8 @@
 
 **定义性约束**：它只负责路由，不亲自干活——每个阶段的实际工作由被路由到的 skill 完成。
 
+**文档归置**：每个变更的所有产出集中在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）——`proposal.md`（为什么、什么在变）、`design.md`（技术方案）、`spec.md`（需求与场景）、`plans.md`（实现清单）、`issues/`（本地票据）。
+
 ## When to reach for it
 
 - **调用方式**：键入 `/<name>`，或当用户提出需求、新功能、方案设计、实现请求时，agent 自动取用它。
