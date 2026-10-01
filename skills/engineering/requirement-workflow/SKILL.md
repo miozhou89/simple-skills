@@ -61,6 +61,7 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 | 头脑风暴/多方案 | `/brainstorming` |
 | 澄清需求、产出文档 | `/explore` |
 | 把讨论写成规格 | `/to-spec` |
+| 根据规格生成任务规划 | `/to-plans` |
 | 大需求拆分 | `/to-tickets` |
 | 按规格实施 | `/implement` |
 | 评审代码 | `/code-review` |
