@@ -113,6 +113,8 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 
 每个需求变更的所有产出文档集中存放在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）：`proposal.md`（为什么、什么在变）、`design.md`（技术方案）、`spec.md`（需求与场景）、`plans.md`（实现清单）、`issues/`（本地票据）。同一会话的后续阶段都写入同一目录。
 
+绝大部分情况下，我们不需要手动调用某个 skill，模型会根据上下文自动按需加载合适的 skill，以下展示的用法仅作为演示说明。
+
 ```
 # 0. 初始化项目，在项目打开agent，调用skill
 /setup-simple-skills
