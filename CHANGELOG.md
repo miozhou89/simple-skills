@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.4.1
+
+### Patch Changes
+
+- modify README.md
+
 ## 1.4.0
 
 ### Minor Changes
