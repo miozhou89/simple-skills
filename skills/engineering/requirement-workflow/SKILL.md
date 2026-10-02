@@ -43,16 +43,38 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 - **`/to-spec`** — 把当前对话转化为一份 spec 文档，写入 `docs/changes/<capability-path>/spec.md`。不做访谈，只综合已讨论内容。
 
-## 3. 拆分成多个可追踪的 ticket（可选）
+## 3. 拆分成多个可追踪的 plan 或 ticket（可选）
 
 > 大需求推荐，小需求跳过。
 
-- **`/to-tickets`** — 把 spec 拆成一组 tracer-bullet 票据，每张声明其阻塞边。本地 tracker 时写入 `docs/changes/<capability-path>/issues/`。
+- **`/to-plans`** - 把 spec 拆成可执行的实现步骤，写入 `docs/changes/<capability-path>/plans.md`，并在实现过程中更新进度。
+- **`/to-tickets`** - 对于复杂的需求，可能需要新建多个 agent 会话去实施，这种情况下，可以把 spec 拆成一组 tracer-bullet 票据，每张声明其阻塞边。本地 tracker 时写入 `docs/changes/<capability-path>/issues/`。
 
 ## 4. 实施
 
 - **`/implement`** — 构建 spec 或票据描述的工作，内部驱动 `/tdd`，提交前跑 `/code-review`。
 - **多 ticket 时一次只 implement 一个**：`/implement #01`、`/implement #02`……
+
+对每个任务：
+
+1. 宣布："正在处理任务 N：[描述]"
+2. 自然地引用 specs/design："Spec 说 X，所以我做 Y"
+3. TDD 测试驱动开发
+4. 在 plans.md 或 ticket 中标记完成：`- [ ]` → `- [x]`
+5. 简要状态："✓ 任务 N 完成"
+
+所有任务完成后：
+
+```
+## 实现完成
+
+所有任务完成：
+- [x] 任务 1
+- [x] 任务 2
+- [x] ...
+
+变更已实现！<简要总结>
+```
 
 ## 5. 代码 review
 
