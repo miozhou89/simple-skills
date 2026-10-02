@@ -1,15 +1,14 @@
 Skills 按 bucket 目录组织在 `skills/` 下：
 
 - `engineering/` — 日常代码工作
-- `productivity/` — 日常非代码工作流工具
 
-`engineering/` 或 `productivity/`（即 **promoted** bucket）中的每个 skill 必须在顶层 `README.md` 中有引用，且在 `.claude-plugin/plugin.json` 的 `skills` 数组中有条目（Claude Code 插件恰好发布 promoted 集合）。
+`engineering/`（即 **promoted** bucket）中的每个 skill 必须在顶层 `README.md` 中有引用，且在 `.claude-plugin/plugin.json` 的 `skills` 数组中有条目（Claude Code 插件恰好发布 promoted 集合）。
 
 顶层 `README.md` 中的每个 skill 条目必须将 skill name 链接到其 `SKILL.md`。
 
 每个 bucket 目录都有一个 `README.md`，以一行描述列出该 bucket 中所有 skill，并将 skill name 链接到其 `SKILL.md`。
 
-`engineering/` 和 `productivity/` 中的 skill 还需在 `docs/<bucket>/<skill-name>.md` 提供面向人类的文档页（docs 目录树镜像 `skills/` 下这两个 bucket 目录）。
+`engineering/` 中的 skill 还需在 `docs/engineering/<skill-name>.md` 提供面向人类的文档页（docs 目录树镜像 `skills/` 下的 bucket 目录）。
 
 每个 `SKILL.md` 必为以下二者之一：user-invoked（`disable-model-invocation: true` 且 `agents/openai.yaml` 中 `policy.allow_implicit_invocation: false`，仅人类可触达）或 model-invoked（模型或人类均可触达）。
 

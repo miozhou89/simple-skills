@@ -79,9 +79,7 @@ disable-model-invocation: true
 - **`/resolving-merge-conflicts`** — 逐 hunk 处理进行中的 merge 或 rebase 冲突，依据**意图**来解决——追溯到每一方的 primary source——而不是靠挑选行，然后完成这次操作。它从不运行 `--abort`。独立于所有流程：当你已经身处冲突中时用它。
 - **`/prototype`** — 一个回答单个设计问题的一次性小程序：这个状态模型感觉对吗，或者这个 UI 应该长什么样。「一次性」是对代码写法的约束，而不是销毁它的承诺：答案会被折叠进真实代码，而原型本身作为 **primary source** 保留在 main 之外的 `prototype/<name>` 分支上，并从实现 issue 中指向它。它是主流程第 2 步中的绕道，但任何时候设计问题在纸面上难以敲定时都可以用它。
 - **`/research`** — 把阅读的跑腿活委托给**后台 agent**：它对照 **primary sources** 调查一个问题，然后在 repo 中留下一份带引用的 Markdown 文件。它阅读时你可以继续工作。它产出的文件是要带*进*主流程 `/explore` 的东西——研究为思考提供养料，而不是取代思考。
-- **`/wait-what`** — 针对未被理解的消息的纠正手段。在对话中途、在任何其他 skill 内部使用它，agent 会用你缺失的上下文、用大白话、用 `CONTEXT.md` 的词汇重新讲一遍它刚才说的话。它是事后补救；`/explore` 是事前预防，因为早早约定的共同语言才能从一开始阻止黑话出现。
 - **`/teach`** — 跨多个会话学习一个概念，把当前目录用作有状态的工作区。
-- **`/writing-for-agents`** — 写给 agent 消费的文档（skills、AGENTS.md、被指到的文档）的参考。
 
 ## 前置条件
 

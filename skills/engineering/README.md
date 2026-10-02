@@ -40,3 +40,6 @@
 - **[skill-creator](./skill-creator/SKILL.md)** — 创建、迭代改进 skill，并用 eval 与方差分析基准衡量性能。
 - **[skill-translator](./skill-translator/SKILL.md)** — 批量翻译 skills 目录或文档树到目标语言，生成结构一致的副本并执行技能精简。
 - **[verification-before-completion](./verification-before-completion/SKILL.md)** — 宣称完成或修复前必须运行验证命令，始终用证据支撑断言。
+- **[grilling](./grilling/SKILL.md)** — 围绕一个计划、决策或想法对用户进行毫不留情的盘问，直到设计树的每一条分支都有结论。
+- **[handoff](./handoff/SKILL.md)** — 将当前对话压缩成一份交接文档，让另一个 agent 可以继续这项工作。
+- **[teach](./teach/SKILL.md)** — 跨多个会话教用户一项新技能或概念，以当前目录作为有状态的教学工作区。

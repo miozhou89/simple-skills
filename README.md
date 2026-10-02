@@ -103,11 +103,9 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [skill-creator](./skills/engineering/skill-creator/SKILL.md) | 创建、迭代改进 skill，并用 eval 与方差分析基准衡量性能 |
 | [skill-translator](./skills/engineering/skill-translator/SKILL.md) | 批量翻译 skills 目录或文档树到目标语言，生成结构一致的副本并执行技能精简 |
 | [verification-before-completion](./skills/engineering/verification-before-completion/SKILL.md) | 宣称完成或修复前必须运行验证命令，始终用证据支撑断言 |
-| [handoff](./skills/productivity/handoff/SKILL.md) | 将当前对话压缩成一份交接文档，让另一个 agent 可以继续这项工作 |
-| [teach](./skills/productivity/teach/SKILL.md) | 跨多个会话教用户一项新技能或概念，以当前目录作为有状态的教学工作区 |
-| [wait-what](./skills/productivity/wait-what/SKILL.md) | 在某条消息没听懂的那一刻触发，用平实的语言重新讲述 |
-| [grilling](./skills/productivity/grilling/SKILL.md) | 围绕一个计划、决策或想法进行毫不留情的盘问，直到设计树的每条分支都有结论 |
-| [writing-for-agents](./skills/productivity/writing-for-agents/SKILL.md) | 为 agent 撰写文档：skill、AGENTS.md/CLAUDE.md，以及任何通过指针触达的文档 |
+| [grilling](./skills/engineering/grilling/SKILL.md) | 围绕一个计划、决策或想法进行毫不留情的盘问，直到设计树的每条分支都有结论 |
+| [handoff](./skills/engineering/handoff/SKILL.md) | 将当前对话压缩成一份交接文档，让另一个 agent 可以继续这项工作 |
+| [teach](./skills/engineering/teach/SKILL.md) | 跨多个会话教用户一项新技能或概念，以当前目录作为有状态的教学工作区 |
 
 ## 基本工作流
 
