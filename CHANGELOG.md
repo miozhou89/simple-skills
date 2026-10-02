@@ -1,5 +1,23 @@
 # simple-skills
 
+## 1.5.3
+
+### Patch Changes
+
+- update
+
+## 1.5.2
+
+### Patch Changes
+
+- update
+
+## 1.5.1
+
+### Patch Changes
+
+- delete doc-coauthoring
+
 ## 1.5.0
 
 ### Minor Changes
