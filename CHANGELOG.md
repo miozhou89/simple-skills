@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.5.4
+
+### Patch Changes
+
+- image-to-code skill
+
 ## 1.5.3
 
 ### Patch Changes
