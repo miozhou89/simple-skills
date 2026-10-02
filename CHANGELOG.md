@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.5.0
+
+### Minor Changes
+
+- 添加 taste 技能
+
 ## 1.4.1
 
 ### Patch Changes

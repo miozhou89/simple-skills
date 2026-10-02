@@ -29,7 +29,6 @@
 - **[requirement-workflow](./requirement-workflow/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
 - **[canvas-design](./canvas-design/SKILL.md)** — 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品。
 - **[chart-generator](./chart-generator/SKILL.md)** — 生成数据可视化图表：antv 轻量图表，或按用户 matplotlib 规范输出定制 PNG。
-- **[doc-coauthoring](./doc-coauthoring/SKILL.md)** — 引导结构化文档协作流程：上下文收集 → 优化与结构化 → 读者测试。
 - **[finishing-a-development-branch](./finishing-a-development-branch/SKILL.md)** — 收尾开发分支：验证测试、检测环境、展示集成选项、执行并清理。
 - **[frontend-design](./frontend-design/SKILL.md)** — 创建有设计感、生产级的前端界面，视觉与代码质量并重。
 - **[image-to-code](./image-to-code/SKILL.md)** — 把设计稿截图转成生产级代码，自动检测框架、复用现有组件。
