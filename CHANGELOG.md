@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.6.0
+
+### Minor Changes
+
+- 删除 resolving-merge-conflicts；重命名 requirement-workflow 为 ship
+
 ## 1.5.5
 
 ### Patch Changes
