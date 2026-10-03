@@ -23,10 +23,9 @@
 - **[domain-modeling](./domain-modeling/SKILL.md)** — 主动构建并打磨项目的领域模型——挑战术语、用场景压力测试、就地更新 `CONTEXT.md` 和 ADR。
 - **[codebase-design](./codebase-design/SKILL.md)** — 设计深模块的共享纪律与词汇：小接口、干净的 seam、可经由接口测试。
 - **[code-review](./code-review/SKILL.md)** — 对某个固定时间点以来的 diff 做双轴评审：**Standards**（是否遵循仓库的编码规范，外加 Fowler 坏味道基线？）和 **Spec**（是否忠实实现了原始 issue/spec？），以并行子 agent 运行。
-- **[resolving-merge-conflicts](./resolving-merge-conflicts/SKILL.md)** — 逐块处理进行中的 git merge 或 rebase 冲突，通过追溯到每一方一手来源的意图来解决，然后完成该操作——绝不 `--abort`。
 - **[brainstorming](./brainstorming/SKILL.md)** — 在任何创造性工作之前通过协作对话把想法打磨成设计（产出 `docs/changes/<capability-path>/design.md`），获用户批准后才进入实现。
 - **[to-plans](./to-plans/SKILL.md)** — 把规格或需求转化为多步骤实现计划（产出 `docs/changes/<capability-path>/plans.md`），在动手写代码之前使用。
-- **[requirement-workflow](./requirement-workflow/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
+- **[ship](./ship/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
 - **[canvas-design](./canvas-design/SKILL.md)** — 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品。
 - **[chart-generator](./chart-generator/SKILL.md)** — 生成数据可视化图表：antv 轻量图表，或按用户 matplotlib 规范输出定制 PNG。
 - **[finishing-a-development-branch](./finishing-a-development-branch/SKILL.md)** — 收尾开发分支：验证测试、检测环境、展示集成选项、执行并清理。

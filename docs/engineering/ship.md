@@ -19,6 +19,6 @@
 
 ## Where it fits
 
-- **角色**：主流程的**链式编排**（`requirement-workflow` → `implement` → `code-review`），与 ask-route 同级但更具体——ask-route 回答"该用哪个 skill"，它回答"这个需求该怎么走"。
+- **角色**：主流程的**链式编排**（`ship` → `implement` → `code-review`），与 ask-route 同级但更具体——ask-route 回答"该用哪个 skill"，它回答"这个需求该怎么走"。
 - **邻居**：to-spec 承接设计产物，to-tickets 把 spec 拆成票据，implement 消费票据。
 - **地图**：整套路由由 ask-route 统领；本 skill 是这条主流程的具象化。

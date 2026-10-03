@@ -7,7 +7,7 @@ description: 当你有规格说明或需求用于多步骤任务时使用，在�
 
 **开始时宣布：** "我正在使用 to-plans 技能创建实现计划。"
 
-**计划保存位置：** 当前变更目录下的 `docs/changes/<capability-path>/plans.md`（若处于 requirement-workflow 流程中，沿用其已创建的变更目录；否则按变更命名 `<capability-path>` 并创建。用户对计划位置的偏好优先于此默认值）
+**计划保存位置：** 当前变更目录下的 `docs/changes/<capability-path>/plans.md`（若处于 ship 流程中，沿用其已创建的变更目录；否则按变更命名 `<capability-path>` 并创建。用户对计划位置的偏好优先于此默认值）
 
 读者是对本代码库零上下文、不熟悉工具链与问题领域的工程师。记录他们需要知道的一切：每个任务改哪些文件、代码、测试、需查阅的文档、如何测试。将整个计划拆成小步骤任务，频繁 commit。
 

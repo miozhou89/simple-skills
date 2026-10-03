@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 本 skill 接收当前对话上下文和代码库理解，产出一份 spec。不要访谈用户——只综合你已经知道的内容。
 
-spec 文档存放位置：当前变更目录下的 `docs/changes/<capability-path>/spec.md`。若处于 requirement-workflow 流程中，沿用其已创建的变更目录；否则根据对话上下文为本次变更命名 `<capability-path>`（如 `add-dark-mode`）并创建目录。
+spec 文档存放位置：当前变更目录下的 `docs/changes/<capability-path>/spec.md`。若处于 ship 流程中，沿用其已创建的变更目录；否则根据对话上下文为本次变更命名 `<capability-path>`（如 `add-dark-mode`）并创建目录。
 
 
 ## 流程

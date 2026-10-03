@@ -72,7 +72,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | Skill | 用途 |
 | --- | --- |
 | [ask-route](./skills/engineering/ask-route/SKILL.md) | 询问哪个 skill 或流程适合你的情况。user-invoked skills 之上的路由器 |
-| [requirement-workflow](./skills/engineering/requirement-workflow/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
+| [ship](./skills/engineering/ship/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
 | [brainstorming](./skills/engineering/brainstorming/SKILL.md) | 在任何创造性工作之前通过协作对话把想法打磨成设计（产出 `docs/changes/<capability-path>/design.md`），获用户批准后才进入实现 |
 | [explore](./skills/engineering/explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR（Architecture Decision Record，架构决策记录） |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
@@ -89,7 +89,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [domain-modeling](./skills/engineering/domain-modeling/SKILL.md) | 主动构建并打磨项目的领域模型——挑战术语、用场景压力测试、就地更新 `CONTEXT.md` 和 ADR |
 | [codebase-design](./skills/engineering/codebase-design/SKILL.md) | 设计深模块的共享纪律与词汇：小接口、干净的 seam、可经由接口测试 |
 | [code-review](./skills/engineering/code-review/SKILL.md) | 对 diff 做双轴评审：**Standards**（编码规范 + Fowler 坏味道基线）与 **Spec**（是否忠实实现原始 issue/spec），以并行子 agent 运行 |
-| [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts/SKILL.md) | 逐块处理进行中的 git merge 或 rebase 冲突，追溯各方一手来源意图解决，绝不 `--abort` |
 | [canvas-design](./skills/engineering/canvas-design/SKILL.md) | 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品 |
 | [chart-generator](./skills/engineering/chart-generator/SKILL.md) | 生成数据可视化图表：antv 轻量图表，或按用户 matplotlib 规范输出定制 PNG |
 | [finishing-a-development-branch](./skills/engineering/finishing-a-development-branch/SKILL.md) | 收尾开发分支：验证测试、检测环境、展示集成选项、执行并清理 |
