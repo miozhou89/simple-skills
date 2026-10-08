@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.6.1
+
+### Patch Changes
+
+- add diagram-html skill
+
 ## 1.6.0
 
 ### Minor Changes
