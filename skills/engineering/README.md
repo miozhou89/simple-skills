@@ -29,7 +29,6 @@
 - **[canvas-design](./canvas-design/SKILL.md)** — 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品。
 - **[chart-generator](./chart-generator/SKILL.md)** — 生成数据可视化图表：antv 轻量图表，或按用户 matplotlib 规范输出定制 PNG。
 - **[diagram-html](./diagram-html/SKILL.md)** — 用纯 markdown（无 .mjs、无 HTML 模板、无依赖）生成自包含的单文件交互式 HTML 图表：架构图、流程图、时序图、数据流图、状态机。
-- **[finishing-a-development-branch](./finishing-a-development-branch/SKILL.md)** — 收尾开发分支：验证测试、检测环境、展示集成选项、执行并清理。
 - **[image-to-code](./image-to-code/SKILL.md)** — 把设计稿截图转成生产级代码，自动检测框架、复用现有组件。
 - **[officedocs](./officedocs/SKILL.md)** — 处理 Microsoft Office 三件套：Word（.docx）、PowerPoint（.pptx）、Excel（.xlsx）——创建、读取、编辑、提取、转换与清理。
 - **[pdf](./pdf/SKILL.md)** — 处理 PDF 的一切操作：读取/提取、合并、拆分、旋转、水印、表单、加密解密、OCR。

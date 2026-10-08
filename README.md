@@ -91,7 +91,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [code-review](./skills/engineering/code-review/SKILL.md) | 对 diff 做双轴评审：**Standards**（编码规范 + Fowler 坏味道基线）与 **Spec**（是否忠实实现原始 issue/spec），以并行子 agent 运行 |
 | [canvas-design](./skills/engineering/canvas-design/SKILL.md) | 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品 |
 | [chart-generator](./skills/engineering/chart-generator/SKILL.md) | 生成数据可视化图表：antv 轻量图表，或按用户 matplotlib 规范输出定制 PNG |
-| [finishing-a-development-branch](./skills/engineering/finishing-a-development-branch/SKILL.md) | 收尾开发分支：验证测试、检测环境、展示集成选项、执行并清理 |
 | [image-to-code](./skills/engineering/image-to-code/SKILL.md) | 把设计稿截图转成生产级代码，自动检测框架、复用现有组件 |
 | [officedocs](./skills/engineering/officedocs/SKILL.md) | 处理 Microsoft Office 三件套：Word（.docx）、PowerPoint（.pptx）、Excel（.xlsx）——创建、读取、编辑、提取、转换与清理 |
 | [pdf](./skills/engineering/pdf/SKILL.md) | 处理 PDF 的一切操作：读取/提取、合并、拆分、旋转、水印、表单、加密解密、OCR |
