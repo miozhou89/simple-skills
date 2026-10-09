@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.6.3
+
+### Patch Changes
+
+- add taste-canvas-design
+
 ## 1.6.2
 
 ### Patch Changes
