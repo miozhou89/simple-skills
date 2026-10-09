@@ -26,7 +26,6 @@
 - **[brainstorming](./brainstorming/SKILL.md)** — 在任何创造性工作之前通过协作对话把想法打磨成设计（产出 `docs/changes/<capability-path>/design.md`），获用户批准后才进入实现。
 - **[to-plans](./to-plans/SKILL.md)** — 把规格或需求转化为多步骤实现计划（产出 `docs/changes/<capability-path>/plans.md`），在动手写代码之前使用。
 - **[ship](./ship/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
-- **[canvas-design](./canvas-design/SKILL.md)** — 基于设计哲学在 .png/.pdf 画布上创作海报、艺术品等静态视觉作品。
 - **[diagram-html](./diagram-html/SKILL.md)** — 用纯 markdown（无 .mjs、无 HTML 模板、无依赖）生成自包含的单文件交互式 HTML 图表：架构图、流程图、时序图、数据流图、状态机。
 - **[image-to-code](./image-to-code/SKILL.md)** — 把设计稿截图转成生产级代码，自动检测框架、复用现有组件。
 - **[officedocs](./officedocs/SKILL.md)** — 处理 Microsoft Office 三件套：Word（.docx）、PowerPoint（.pptx）、Excel（.xlsx）——创建、读取、编辑、提取、转换与清理。
