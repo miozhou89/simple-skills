@@ -5,7 +5,7 @@
 ## 约定
 
 - 每个变更一个目录：`docs/changes/<capability-path>/`（`<capability-path>` 按变更命名，如 `add-dark-mode`）
-- 变更提案是 `docs/changes/<capability-path>/proposal.md`，spec 是 `docs/changes/<capability-path>/spec.md`，设计文档是 `design.md`，实现计划是 `plans.md`
+- 变更提案是 `docs/changes/<capability-path>/proposal.md`，spec 是 `docs/changes/<capability-path>/spec.md`，实现计划是 `plans.md`
 - 实现 issue 是每张票据一个文件，位于 `docs/changes/<capability-path>/issues/<NN>-<slug>.md`，从 `01` 开始编号——绝不使用单个合并的票据文件
 - 评论和对话历史追加到文件底部的 `## Comments` 标题下
 

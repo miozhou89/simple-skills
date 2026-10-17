@@ -35,8 +35,6 @@ disable-model-invocation: true
 
 **Section A — Issue tracker。**
 
-> 说明："issue tracker" 是本仓库 issue 存放的地方。`to-tickets` 和 `to-spec` 等 skills 会读取和写入它——它们需要知道是调用 `gh issue create`、在 `docs/changes/<capability-path>/` 下写 markdown 文件，还是遵循你描述的其他工作流。请选择你实际跟踪本仓库工作的地方。
-
 默认本地 markdown。
 这些 skills 是为 GitHub 设计的。如果 `git remote` 指向 GitHub，就提议 GitHub。否则（或用户偏好时），提供：
 

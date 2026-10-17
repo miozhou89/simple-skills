@@ -4,7 +4,7 @@
 
 **定义性约束**：它只负责路由，不亲自干活——每个阶段的实际工作由被路由到的 skill 完成。
 
-**文档归置**：每个变更的所有产出集中在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）——`proposal.md`（为什么、什么在变）、`design.md`（技术方案）、`spec.md`（需求与场景）、`plans.md`（实现清单）、`issues/`（本地票据）。
+**文档归置**：每个变更的所有产出集中在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）——`proposal.md`（为什么、什么在变）、`spec.md`（规格）、`plans.md`（实现清单）、`issues/`（本地票据）。
 
 ## When to reach for it
 
@@ -20,5 +20,5 @@
 ## Where it fits
 
 - **角色**：主流程的**链式编排**（`ship` → `implement` → `code-review`），与 ask-route 同级但更具体——ask-route 回答"该用哪个 skill"，它回答"这个需求该怎么走"。
-- **邻居**：to-spec 承接设计产物，to-tickets 把 spec 拆成票据，implement 消费票据。
+- **邻居**：to-spec 承接设计产物，to-plans 把 spec 拆成实施计划，implement 读取计划并实现。
 - **地图**：整套路由由 ask-route 统领；本 skill 是这条主流程的具象化。

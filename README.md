@@ -73,15 +73,12 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | --- | --- |
 | [ask-route](./skills/engineering/ask-route/SKILL.md) | 询问哪个 skill 或流程适合你的情况。user-invoked skills 之上的路由器 |
 | [ship](./skills/engineering/ship/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
-| [brainstorming](./skills/engineering/brainstorming/SKILL.md) | 在任何创造性工作之前通过协作对话把想法打磨成设计（产出 `docs/changes/<capability-path>/design.md`），获用户批准后才进入实现 |
 | [explore](./skills/engineering/explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR（Architecture Decision Record，架构决策记录） |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
 | [setup-simple-skills](./skills/engineering/setup-simple-skills/SKILL.md) | 为 engineering skills 配置本仓库（issue tracker、领域文档布局）。每个仓库运行一次 |
 | [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 文档，写入 `docs/changes/<capability-path>/spec.md` |
 | [to-plans](./skills/engineering/to-plans/SKILL.md) | 把规格或需求转化为多步骤实现计划，写入 `docs/changes/<capability-path>/plans.md` |
-| [to-tickets](./skills/engineering/to-tickets/SKILL.md) | 把任何计划、spec 或对话拆解为一组 tracer-bullet 票据，每张票据声明其阻塞边；本地票据存放在 `docs/changes/<capability-path>/issues/` |
 | [implement](./skills/engineering/implement/SKILL.md) | 构建 spec 或一组票据描述的工作，在约定 seam 处驱动 `/tdd`，提交前以 `/code-review` 收尾 |
-| [wayfinder](./skills/engineering/wayfinder/SKILL.md) | 规划超出一个 agent 会话容量的工作——以决策票据共享地图的形式，一次解决一张 |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs/SKILL.md) | 针对疑难 bug 和性能回退的纪律化诊断循环：变红反馈回路 → 最小化 → 假设 → 插桩 → 修复 → 回归测试 |
 | [prototype](./skills/engineering/prototype/SKILL.md) | 构建一次性原型来回答设计问题：用一个可分享的 HTML 文件承载状态/逻辑，或多个可切换的 UI 变体 |
 | [research](./skills/engineering/research/SKILL.md) | 对照高可信度 primary source 调查问题，把结果以带引用的 Markdown 文件存入 repo，以后台 agent 方式运行 |
@@ -97,13 +94,12 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [skill-creator](./skills/engineering/skill-creator/SKILL.md) | 创建、迭代改进 skill，并用 eval 与方差分析基准衡量性能 |
 | [skill-translator](./skills/engineering/skill-translator/SKILL.md) | 批量翻译 skills 目录或文档树到目标语言，生成结构一致的副本并执行技能精简 |
 | [verification-before-completion](./skills/engineering/verification-before-completion/SKILL.md) | 宣称完成或修复前必须运行验证命令，始终用证据支撑断言 |
-| [grilling](./skills/engineering/grilling/SKILL.md) | 围绕一个计划、决策或想法进行毫不留情的盘问，直到设计树的每条分支都有结论 |
 | [handoff](./skills/engineering/handoff/SKILL.md) | 将当前对话压缩成一份交接文档，让另一个 agent 可以继续这项工作 |
 | [teach](./skills/engineering/teach/SKILL.md) | 跨多个会话教用户一项新技能或概念，以当前目录作为有状态的教学工作区 |
 
 ## 基本工作流
 
-每个需求变更的所有产出文档集中存放在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）：`proposal.md`（为什么、什么在变）、`design.md`（技术方案）、`spec.md`（需求与场景）、`plans.md`（实现清单）、`issues/`（本地票据）。同一会话的后续阶段都写入同一目录。
+每个需求变更的所有产出文档集中存放在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）：`proposal.md`（为什么、什么在变）、`spec.md`（规格）、`plans.md`（实现清单）、`issues/`（本地票据）。同一会话的后续阶段都写入同一目录。
 
 绝大部分情况下，我们不需要手动调用某个 skill，模型会根据上下文自动按需加载合适的 skill，以下展示的用法仅作为演示说明。
 
@@ -112,23 +108,17 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 /setup-simple-skills
 
 # 1. 设计
-# 指定一个需求，进行头脑风暴，给出多个可能的解决方案。适用于需求描述较明确或粒度较小的任务。
-/brainstorming <需求> 
 # 通过提问澄清需求，产出文档：CONTEXT.md、docs/adr/*
-/explore
-# 注：/explore 的成本比你想象的高。
-# 更实际的做法是：只对高风险、高耦合的功能模块使用，小改动跳过或使用 /brainstorming
+/explore <一句话描述需求>
 
 # 2. 编写方案、规格
 /to-spec
 
-# 3. 拆分成多个可追踪的 ticket   (可选,大需求推荐加这一步)
-/to-tickets
+# 3. 拆分成多个可追踪的执行计划
+/to-plans
 
 # 4. 实施
 /implement
-#多 ticket 时,一次只 implement 一个
-/implement #01
 
 # 5. 代码review
 /code-review

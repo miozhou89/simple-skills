@@ -24,20 +24,15 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 | 文件 | 内容 | 由谁产出 |
 | --- | --- | --- |
 | `proposal.md` | 为什么要做这个、什么在变 | 本流程（需求确认时起草） |
-| `design.md` | 技术方案 | `/brainstorming` 或 `/explore` |
+| `CONTEXT.md`、`docs/adr/*` | 技术方案 | `/explore` |
 | `spec.md` | 需求和场景 | `/to-spec` |
 | `plans.md` | 实现清单 | `/to-plans` |
-| `issues/<NN>-<slug>.md` | 拆分的票据（本地 tracker 时） | `/to-tickets` |
 
 - 不要把变更文档散落到 `docs/spec/`、`docs/plans/` 等其他目录；跨变更的领域词汇与 ADR 仍归 `CONTEXT.md` 和 `docs/adr/` 管。
 
 ## 1. 设计
 
-> 只对高风险、高耦合的功能做。节奏快的团队、小改动直接跳过，从规格开始。
-
-- **`/brainstorming`** — 给出多个可行方案，供用户挑选，适用于需求描述较明确或粒度较小的任务。设计定稿后写入 `docs/changes/<capability-path>/design.md`。
 - **`/explore`** — 通过提问澄清需求，产出文档：`CONTEXT.md`、`docs/adr/*`（`docs/adr` 目录若不存在则使用 `setup-simple-skills` 对项目进行设置）
-- **注**：`/explore` 成本较高，只有在当需求描述模糊时，通过提问和探索澄清需求，小改动跳过。
 
 ## 2. 编写方案、规格
 
@@ -45,15 +40,11 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 ## 3. 拆分成多个可追踪的 plan 或 ticket（可选）
 
-> 大需求推荐，小需求跳过。
-
 - **`/to-plans`** - 把 spec 拆成可执行的实现步骤，写入 `docs/changes/<capability-path>/plans.md`，并在实现过程中更新进度。
-- **`/to-tickets`** - 对于复杂的需求，可能需要新建多个 agent 会话去实施，这种情况下，可以把 spec 拆成一组 tracer-bullet 票据，每张声明其阻塞边。本地 tracker 时写入 `docs/changes/<capability-path>/issues/`。
 
 ## 4. 实施
 
 - **`/implement`** — 构建 spec 或票据描述的工作，内部驱动 `/tdd`，提交前跑 `/code-review`。
-- **多 ticket 时一次只 implement 一个**：`/implement #01`、`/implement #02`……
 
 对每个任务：
 
@@ -98,11 +89,9 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 | 用户要求 | 路由到 |
 | --- | --- |
-| 头脑风暴/多方案 | `/brainstorming` |
 | 澄清需求、产出文档 | `/explore` |
 | 把讨论写成规格 | `/to-spec` |
 | 根据规格生成任务规划 | `/to-plans` |
-| 大需求拆分 | `/to-tickets` |
 | 按规格实施 | `/implement` |
 | 评审代码 | `/code-review` |
 | 重构 | `/improve-codebase-architecture` |
