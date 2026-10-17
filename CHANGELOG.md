@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.7.0
+
+### Minor Changes
+
+- 删除 to-tickets, wayfinder, grilling, brainstorming
+
 ## 1.6.3
 
 ### Patch Changes
