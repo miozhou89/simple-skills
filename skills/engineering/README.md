@@ -2,25 +2,23 @@
 
 我日常代码工作中使用的 skills。
 
-需求变更的所有产出文档集中存放在当前变更目录 `docs/changes/<capability-path>/` 下（`<capability-path>` 按变更命名，如 `add-dark-mode`）：`proposal.md`（为什么、什么在变）、`spec.md`（规格）、`plans.md`（实现清单）、`issues/`（本地票据）。跨变更的领域词汇与 ADR 仍归 `CONTEXT.md` 和 `docs/adr/`。
+需求变更的所有产出文档集中存放在当前变更目录 `docs/changes/<capability-path>/` 下（`<capability-path>` 按变更命名，如 `add-dark-mode`）：`spec.md`（规格）、`plans.md`（实现清单）、`issues/`（本地票据）。跨变更的领域词汇与 ADR 仍归 `CONTEXT.md` 和 `docs/adr/`。
 
 ## Skills
 
-- **[ask-route](./ask-route/SKILL.md)** — 询问哪个 skill 或流程适合你的情况。这是本仓库中 user-invoked skills 之上的路由器。
+- **[ship](./ship/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
 - **[explore](./explore/SKILL.md)** — 盘问式会话，同时构建项目的领域模型，在过程中打磨术语并就地更新 `CONTEXT.md` 和 ADR。
-- **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)** — 扫描代码库寻找深化（deepening）机会，以可视化 HTML 报告呈现，然后对你选中的机会进行盘问。
-- **[setup-simple-skills](./setup-simple-skills/SKILL.md)** — 为 engineering skills 配置本仓库（issue tracker、领域文档布局）。每个仓库运行一次。
 - **[to-spec](./to-spec/SKILL.md)** — 把当前对话转化为一份 spec 文档，写入当前变更目录 `docs/changes/<capability-path>/spec.md`。
+- **[to-plans](./to-plans/SKILL.md)** — 把规格或需求转化为多步骤实现计划（产出 `docs/changes/<capability-path>/plans.md`），在动手写代码之前使用。
 - **[implement](./implement/SKILL.md)** — 构建 spec 或一组票据所描述的工作，在预先约定的 seam 处驱动 `/tdd`，并在提交前以 `/code-review` 收尾。
 - **[prototype](./prototype/SKILL.md)** — 构建一次性原型来回答设计问题：用一个可分享的 HTML 文件承载状态/逻辑，或多个可切换的 UI 变体。
+- **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)** — 扫描代码库寻找深化（deepening）机会，以可视化 HTML 报告呈现，然后对你选中的机会进行盘问。
 - **[diagnosing-bugs](./diagnosing-bugs/SKILL.md)** — 针对疑难 bug 和性能回退的纪律化诊断循环：构建一个对该 bug 变红的反馈回路 → 最小化 → 假设 → 插桩 → 修复 → 回归测试。
 - **[research](./research/SKILL.md)** — 对照高可信度的 primary source 调查问题，把结果以带引用的 Markdown 文件存入 repo，以后台 agent 方式运行。
 - **[tdd](./tdd/SKILL.md)** — 采用 red-green-refactor 循环的测试驱动开发。一次构建一个垂直切片的功能或修复一个 bug。
 - **[domain-modeling](./domain-modeling/SKILL.md)** — 主动构建并打磨项目的领域模型——挑战术语、用场景压力测试、就地更新 `CONTEXT.md` 和 ADR。
 - **[codebase-design](./codebase-design/SKILL.md)** — 设计深模块的共享纪律与词汇：小接口、干净的 seam、可经由接口测试。
 - **[code-review](./code-review/SKILL.md)** — 对某个固定时间点以来的 diff 做双轴评审：**Standards**（是否遵循仓库的编码规范，外加 Fowler 坏味道基线？）和 **Spec**（是否忠实实现了原始 issue/spec？），以并行子 agent 运行。
-- **[to-plans](./to-plans/SKILL.md)** — 把规格或需求转化为多步骤实现计划（产出 `docs/changes/<capability-path>/plans.md`），在动手写代码之前使用。
-- **[ship](./ship/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
 - **[diagram-html](./diagram-html/SKILL.md)** — 用纯 markdown（无 .mjs、无 HTML 模板、无依赖）生成自包含的单文件交互式 HTML 图表：架构图、流程图、时序图、数据流图、状态机。
 - **[image-to-code](./image-to-code/SKILL.md)** — 把设计稿截图转成生产级代码，自动检测框架、复用现有组件。
 - **[officedocs](./officedocs/SKILL.md)** — 处理 Microsoft Office 三件套：Word（.docx）、PowerPoint（.pptx）、Excel（.xlsx）——创建、读取、编辑、提取、转换与清理。
@@ -32,3 +30,4 @@
 - **[verification-before-completion](./verification-before-completion/SKILL.md)** — 宣称完成或修复前必须运行验证命令，始终用证据支撑断言。
 - **[handoff](./handoff/SKILL.md)** — 将当前对话压缩成一份交接文档，让另一个 agent 可以继续这项工作。
 - **[teach](./teach/SKILL.md)** — 跨多个会话教用户一项新技能或概念，以当前目录作为有状态的教学工作区。
+- **[ask-route](./ask-route/SKILL.md)** — 询问哪个 skill 或流程适合你的情况。这是本仓库中 user-invoked skills 之上的路由器。

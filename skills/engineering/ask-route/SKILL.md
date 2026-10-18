@@ -62,7 +62,3 @@ disable-model-invocation: true
 - **`/research`** — 把阅读的跑腿活委托给**后台 agent**：它对照 **primary sources** 调查一个问题，然后在 repo 中留下一份带引用的 Markdown 文件。它阅读时你可以继续工作。它产出的文件是要带*进*主流程 `/explore` 的东西——研究为思考提供养料，而不是取代思考。
 - **`/teach`** — 跨多个会话学习一个概念，把当前目录用作有状态的工作区。
 - **`/diagram-html`** — 把系统、流程、时序或状态的描述变成可缩放、可切主题、可导出 SVG 的单文件 HTML 图。无依赖无构建。
-
-## 前置条件
-
-**`/setup-simple-skills`** — 在你的第一个工程流程之前运行，配置其他 skill 所假设的 issue tracker、分诊标签和文档布局。自定义 issue tracker 同样可用。

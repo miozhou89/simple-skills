@@ -18,13 +18,13 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 每个需求变更的所有产出文档集中存放在 `docs/changes/<capability-path>/`：
 
 - 开始一个新变更时，根据对话上下文为它命名 `<capability-path>`（如 `add-dark-mode`），创建目录 `docs/changes/<capability-path>/`。
-- 起草 `proposal.md`（为什么要做这个、什么在变）放入该目录，与用户确认后作为本次变更的入口文档。
+- 起草 `docs/changes/<capability-path>/spec.md`（为什么要做这个、什么在变）放入该目录，与用户确认后作为本次变更的入口文档。
 - 同一会话中后续各阶段 skill 的输出文档都写入同一目录：
 
 | 文件 | 内容 | 由谁产出 |
 | --- | --- | --- |
-| `proposal.md` | 为什么要做这个、什么在变 | 本流程（需求确认时起草） |
-| `CONTEXT.md`、`docs/adr/*` | 技术方案 | `/explore` |
+| `CONTEXT.md`、`docs/adr/*` | 领域模型、术语、技术方案 | `/domain-modeling` |
+| `docs/changes/<capability-path>/` | 为什么要做这个、什么在变 | 本流程（需求确认时起草） |
 | `spec.md` | 需求和场景 | `/to-spec` |
 | `plans.md` | 实现清单 | `/to-plans` |
 
@@ -32,7 +32,7 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 ## 1. 设计
 
-- **`/explore`** — 通过提问澄清需求，产出文档：`CONTEXT.md`、`docs/adr/*`（`docs/adr` 目录若不存在则使用 `setup-simple-skills` 对项目进行设置）
+- **`/explore`** — 通过提问澄清需求，产出文档：`CONTEXT.md`、`docs/adr/*`
 
 ## 2. 编写方案、规格
 

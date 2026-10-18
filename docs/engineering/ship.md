@@ -4,7 +4,7 @@
 
 **定义性约束**：它只负责路由，不亲自干活——每个阶段的实际工作由被路由到的 skill 完成。
 
-**文档归置**：每个变更的所有产出集中在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）——`proposal.md`（为什么、什么在变）、`spec.md`（规格）、`plans.md`（实现清单）、`issues/`（本地票据）。
+**文档归置**：每个变更的所有产出集中在 `docs/changes/<capability-path>/`（按变更命名，如 `add-dark-mode`）——`spec.md`（规格）、`plans.md`（实现清单）、`issues/`（本地票据）。
 
 ## When to reach for it
 
