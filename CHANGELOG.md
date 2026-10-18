@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.7.1
+
+### Patch Changes
+
+- delete setup-simple-skills
+
 ## 1.7.0
 
 ### Minor Changes
