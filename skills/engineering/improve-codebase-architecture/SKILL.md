@@ -61,7 +61,7 @@ disable-model-invocation: true
 
 ### 3. 追问循环
 
-用户选定候选项后，运行 `/explore` skill 与他们一起走完决策树——约束、依赖、深化后模块的形态、seam 背后是什么、哪些测试能存活。
+用户选定候选项后，运行 `/req-explore` skill 与他们一起走完决策树——约束、依赖、深化后模块的形态、seam 背后是什么、哪些测试能存活。
 
 副作用随决策成形而即时发生——运行 `/domain-modeling` skill 以在过程中保持领域模型为最新：
 

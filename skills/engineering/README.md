@@ -6,8 +6,8 @@
 
 ## Skills
 
-- **[ship](./ship/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill。
-- **[explore](./explore/SKILL.md)** — 盘问式会话，同时构建项目的领域模型，在过程中打磨术语并就地更新 `CONTEXT.md` 和 ADR。
+- **[ship](./ship/SKILL.md)** — 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 验证，每阶段路由到对应 skill。
+- **[req-explore](./req-explore/SKILL.md)** — 盘问式会话，同时构建项目的领域模型，在过程中打磨术语并就地更新 `CONTEXT.md` 和 ADR。
 - **[to-spec](./to-spec/SKILL.md)** — 把当前对话转化为一份 spec 文档，写入当前变更目录 `docs/changes/<capability-path>/spec.md`。
 - **[to-plans](./to-plans/SKILL.md)** — 把规格或需求转化为多步骤实现计划（产出 `docs/changes/<capability-path>/plans.md`），在动手写代码之前使用。
 - **[implement](./implement/SKILL.md)** — 构建 spec 或一组票据所描述的工作，在预先约定的 seam 处驱动 `/tdd`，并在提交前以 `/code-review` 收尾。

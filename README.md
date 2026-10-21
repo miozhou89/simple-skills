@@ -71,8 +71,8 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 
 | Skill | 用途 |
 | --- | --- |
-| [ship](./skills/engineering/ship/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 维护，每阶段路由到对应 skill |
-| [explore](./skills/engineering/explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR（Architecture Decision Record，架构决策记录） |
+| [ship](./skills/engineering/ship/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 验证，每阶段路由到对应 skill |
+| [req-explore](./skills/engineering/req-explore/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR（Architecture Decision Record，架构决策记录） |
 | [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 文档，写入 `docs/changes/<capability-path>/spec.md` |
 | [to-plans](./skills/engineering/to-plans/SKILL.md) | 把规格或需求转化为多步骤实现计划，写入 `docs/changes/<capability-path>/plans.md` |
 | [implement](./skills/engineering/implement/SKILL.md) | 构建 spec 或一组票据描述的工作，在约定 seam 处驱动 `/tdd`，提交前以 `/code-review` 收尾 |
@@ -105,7 +105,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 ```
 # 1. 探索设计
 # 通过提问澄清需求，产出文档：CONTEXT.md、docs/adr/*
-/explore <一句话描述需求>
+/req-explore <一句话描述需求>
 
 # 2. 编写方案、规格
 /to-spec
@@ -119,14 +119,17 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 # 5. 代码review
 /code-review
 
-# 6. 维护
-# 6.1 重构
+# 6. 验证
+/verification-before-completion
+
+# 维护
+# 重构
 /improve-codebase-architecture
 
-# 6.2 bug定位
+# bug定位
 /diagnosing-bugs
 
-# 6.3 跨会话需求开发
+# 跨会话需求开发
 # 跨会话需求平滑交接与上下文清理(防止对话污染)
 # 1. 在当前对话框输入 /handoff,导出当前需求的成果总结。Windows 通常在 %TEMP%\ 下,macOS/Linux 在 $TMPDIR/ 或 /tmp/ 下。
 # 2. 直接关闭当前对话窗口,新建一个干净的窗口。
