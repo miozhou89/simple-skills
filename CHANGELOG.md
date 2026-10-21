@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.7.2
+
+### Patch Changes
+
+- explore 重命名为 req-explore
+
 ## 1.7.1
 
 ### Patch Changes
