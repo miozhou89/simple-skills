@@ -1,7 +1,6 @@
 ---
 name: image-to-code
 description: 将图片设计稿转换为生产就绪代码。当用户提供图片（设计稿截图）以构建组件/页面时使用。自动检测框架、复用已有组件、应用无障碍与性能最佳实践。
-tools: Read, Write, Edit, Glob, Grep, Bash, WebFetch
 ---
 
 # image to code

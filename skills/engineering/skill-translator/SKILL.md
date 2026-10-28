@@ -1,6 +1,7 @@
 ---
 name: skill-translator
 description: 将 skills 目录或文档树批量翻译成目标语言（如中文），生成结构完全一致的翻译副本（如 skills-zh），翻译后执行一次技能精简。当用户要求翻译 skills、SKILL.md、markdown 文档目录，或要求"保持目录结构翻译"、"只翻译自然语言、保留代码和配置"，或要求精简 skill、删除已内置到模型的冗余内容时使用。
+disable-model-invocation: true
 ---
 
 # Skill Translator
