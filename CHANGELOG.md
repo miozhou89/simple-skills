@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.7.3
+
+### Patch Changes
+
+- fix disable-model-invocation
+
 ## 1.7.2
 
 ### Patch Changes
