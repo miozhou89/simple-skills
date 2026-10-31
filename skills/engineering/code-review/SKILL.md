@@ -5,7 +5,7 @@ description: 沿两个轴评审某个固定点（commit、branch、tag 或 merge
 
 # Code Review
 
-派遣代码审查子代理，在问题扩散之前发现它们。审查者获得的是精心组织的评估汇报。
+派遣代码审查子代理，排查正确性缺陷（correctness bugs）和高风险代码模式（risky patterns），在问题扩散之前发现它们。审查者获得的是精心组织的评估汇报。
 
 对 `HEAD` 与用户提供的固定点之间的 diff 做双轴评审：
 
