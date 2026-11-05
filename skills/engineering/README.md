@@ -16,7 +16,6 @@
 - **[diagnosing-bugs](./diagnosing-bugs/SKILL.md)** — 针对疑难 bug 和性能回退的纪律化诊断循环：构建一个对该 bug 变红的反馈回路 → 最小化 → 假设 → 插桩 → 修复 → 回归测试。
 - **[research](./research/SKILL.md)** — 对照高可信度的 primary source 调查问题，把结果以带引用的 Markdown 文件存入 repo，以后台 agent 方式运行。
 - **[tdd](./tdd/SKILL.md)** — 采用 red-green-refactor 循环的测试驱动开发。一次构建一个垂直切片的功能或修复一个 bug。
-- **[domain-modeling](./domain-modeling/SKILL.md)** — 主动构建并打磨项目的领域模型——挑战术语、用场景压力测试、就地更新 `CONTEXT.md` 和 ADR。
 - **[codebase-design](./codebase-design/SKILL.md)** — 设计深模块的共享纪律与词汇：小接口、干净的 seam、可经由接口测试。
 - **[code-review](./code-review/SKILL.md)** — 对某个固定时间点以来的 diff 做双轴评审：**Standards**（是否遵循仓库的编码规范，外加 Fowler 坏味道基线？）和 **Spec**（是否忠实实现了原始 issue/spec？），以并行子 agent 运行。
 - **[diagram-html](./diagram-html/SKILL.md)** — 用纯 markdown（无 .mjs、无 HTML 模板、无依赖）生成自包含的单文件交互式 HTML 图表：架构图、流程图、时序图、数据流图、状态机。

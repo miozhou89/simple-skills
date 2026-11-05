@@ -81,7 +81,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [prototype](./skills/engineering/prototype/SKILL.md) | 构建一次性原型来回答设计问题：用一个可分享的 HTML 文件承载状态/逻辑，或多个可切换的 UI 变体 |
 | [research](./skills/engineering/research/SKILL.md) | 对照高可信度 primary source 调查问题，把结果以带引用的 Markdown 文件存入 repo，以后台 agent 方式运行 |
 | [tdd](./skills/engineering/tdd/SKILL.md) | 采用 red-green-refactor 循环的测试驱动开发，一次构建一个垂直切片的功能或修复一个 bug |
-| [domain-modeling](./skills/engineering/domain-modeling/SKILL.md) | 主动构建并打磨项目的领域模型——挑战术语、用场景压力测试、就地更新 `CONTEXT.md` 和 ADR |
 | [codebase-design](./skills/engineering/codebase-design/SKILL.md) | 设计深模块的共享纪律与词汇：小接口、干净的 seam、可经由接口测试 |
 | [code-review](./skills/engineering/code-review/SKILL.md) | 对 diff 做双轴评审：**Standards**（编码规范 + Fowler 坏味道基线）与 **Spec**（是否忠实实现原始 issue/spec），以并行子 agent 运行 |
 | [image-to-code](./skills/engineering/image-to-code/SKILL.md) | 把设计稿截图转成生产级代码，自动检测框架、复用现有组件 |

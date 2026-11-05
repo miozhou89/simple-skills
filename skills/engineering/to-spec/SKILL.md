@@ -73,3 +73,6 @@ spec 文档存放位置：当前变更目录下的 `docs/changes/<capability-pat
 关于该功能的任何其他说明。
 
 </spec-template>
+
+
+完成 spec 编写后，使用 `/to-plans` skill 把 spec 拆成可执行的实现步骤。

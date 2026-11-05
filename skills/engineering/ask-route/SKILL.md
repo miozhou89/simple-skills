@@ -39,7 +39,6 @@ disable-model-invocation: true
 
 两个 model-invoked 的参考 skill，在其他 skill *之下*运行——各自是其词汇的唯一事实来源。当问题在于**词语**而非流程时直接使用它们；或者让上面的 skill 自行引用它们。
 
-- **`/domain-modeling`** — 打磨项目的*领域*语言：挑战模糊的术语，消解一词多义（"account" 同时承担三个含义），把难以逆转的决定记录为 ADR。它是 `/req-explore` 用来保持 `CONTEXT.md` 为一份干净词汇表的主动纪律。
 - **`/codebase-design`** — 用于设计模块*形状*的深模块词汇（module、interface、depth、seam、adapter、leverage、locality）：在干净的 seam 处，用小接口承载大量行为。`/tdd` 和 `/improve-codebase-architecture` 都说这门语言。
 
 ## 阶段边界
