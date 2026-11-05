@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.0
+
+### Minor Changes
+
+- 简化 skill, domain-modeling 合并进 req-explore
+
 ## 1.7.4
 
 ### Patch Changes
