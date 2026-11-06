@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.1
+
+### Patch Changes
+
+- delete ask-route
+
 ## 1.8.0
 
 ### Minor Changes
