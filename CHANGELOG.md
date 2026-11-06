@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.2
+
+### Patch Changes
+
+- update skill-translator
+
 ## 1.8.1
 
 ### Patch Changes
