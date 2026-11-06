@@ -17,8 +17,6 @@
 - `references/layout-timeline.md`（104 行）——sequence
 - `references/layout-machine.md`（65 行）——lifecycle（layered 的预设）
 
-同步 `skills/engineering/README.md` 与 `skills/engineering/ask-route/SKILL.md`。
-
 ## 核心决策
 
 **几何计算搬到浏览器，而不是留在生成端。**

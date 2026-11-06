@@ -20,4 +20,3 @@
 
 - **角色**：model-invoked 的工程维护 skill，与 diagnosing-bugs 相邻——后者处理「坏了/变慢了」的回归，本 skill 处理主动的性能分析与优化。
 - **邻居**：diagnosing-bugs（性能回归）、code-review（评审时可引用其技术目录检查性能）、improve-codebase-architecture（架构层面的深化，本 skill 聚焦运行时成本）。
-- **地图**：ask-route 的「代码库健康」部分统领其路由。

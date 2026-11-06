@@ -17,8 +17,3 @@
 - 每阶段都落在具体 skill 上，用户知道下一步该运行什么。
 - 小改动被合理地跳过设计与票据阶段，而不是机械地走完全程。
 
-## Where it fits
-
-- **角色**：主流程的**链式编排**（`ship` → `implement` → `code-review`），与 ask-route 同级但更具体——ask-route 回答"该用哪个 skill"，它回答"这个需求该怎么走"。
-- **邻居**：to-spec 承接设计产物，to-plans 把 spec 拆成实施计划，implement 读取计划并实现。
-- **地图**：整套路由由 ask-route 统领；本 skill 是这条主流程的具象化。

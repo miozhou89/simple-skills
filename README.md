@@ -93,7 +93,6 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [verification-before-completion](./skills/engineering/verification-before-completion/SKILL.md) | 宣称完成或修复前必须运行验证命令，始终用证据支撑断言 |
 | [handoff](./skills/engineering/handoff/SKILL.md) | 将当前对话压缩成一份交接文档，让另一个 agent 可以继续这项工作 |
 | [teach](./skills/engineering/teach/SKILL.md) | 跨多个会话教用户一项新技能或概念，以当前目录作为有状态的教学工作区 |
-| [ask-route](./skills/engineering/ask-route/SKILL.md) | 询问哪个 skill 或流程适合你的情况。user-invoked skills 之上的路由器 |
 
 ## 基本工作流
 
