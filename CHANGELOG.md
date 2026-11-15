@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.3
+
+### Patch Changes
+
+- fix handoff skill
+
 ## 1.8.2
 
 ### Patch Changes

@@ -2,7 +2,6 @@
 name: handoff
 description: 将当前对话压缩成一份交接文档，供另一个 agent 接手。
 argument-hint: "What will the next session be used for?"
-disable-model-invocation: true
 ---
 
 撰写一份交接文档，总结当前对话，让一个新的 agent 可以继续这项工作。保存到用户操作系统的临时目录——而不是当前工作区。
