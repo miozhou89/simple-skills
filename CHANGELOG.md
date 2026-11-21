@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.4
+
+### Patch Changes
+
+- delete playwright-cli skill
+
 ## 1.8.3
 
 ### Patch Changes
