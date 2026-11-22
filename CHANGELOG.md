@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.6
+
+### Patch Changes
+
+- req-explore 重命名为 design-inquiry，补充交互提问要求
+
 ## 1.8.5
 
 ### Patch Changes
