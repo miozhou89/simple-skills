@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.5
+
+### Patch Changes
+
+- 优化 code-review skill
+
 ## 1.8.4
 
 ### Patch Changes
