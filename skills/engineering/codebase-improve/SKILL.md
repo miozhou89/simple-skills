@@ -1,5 +1,5 @@
 ---
-name: improve-codebase-architecture
+name: codebase-improve
 description: 扫描代码库以寻找深化机会，将其呈现为可视化 HTML 报告，然后针对你选中的机会进行访谈式追问。
 disable-model-invocation: true
 ---

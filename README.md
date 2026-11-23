@@ -76,7 +76,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 文档，写入 `docs/changes/<capability-path>/spec.md` |
 | [to-plans](./skills/engineering/to-plans/SKILL.md) | 把规格或需求转化为多步骤实现计划，写入 `docs/changes/<capability-path>/plans.md` |
 | [implement](./skills/engineering/implement/SKILL.md) | 构建 spec 或一组票据描述的工作，在约定 seam 处驱动 `/tdd`，提交前以 `/code-review` 收尾 |
-| [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
+| [codebase-improve](./skills/engineering/codebase-improve/SKILL.md) | 扫描代码库寻找深化机会，以可视化 HTML 报告呈现，再对选中的机会进行盘问 |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs/SKILL.md) | 针对疑难 bug 和性能回退的纪律化诊断循环：变红反馈回路 → 最小化 → 假设 → 插桩 → 修复 → 回归测试 |
 | [prototype](./skills/engineering/prototype/SKILL.md) | 构建一次性原型来回答设计问题：用一个可分享的 HTML 文件承载状态/逻辑，或多个可切换的 UI 变体 |
 | [research](./skills/engineering/research/SKILL.md) | 对照高可信度 primary source 调查问题，把结果以带引用的 Markdown 文件存入 repo，以后台 agent 方式运行 |
@@ -121,7 +121,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 
 # 维护
 # 重构
-/improve-codebase-architecture
+/codebase-improve
 
 # bug定位
 /diagnosing-bugs
