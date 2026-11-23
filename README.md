@@ -72,7 +72,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 | Skill | 用途 |
 | --- | --- |
 | [ship](./skills/engineering/ship/SKILL.md) | 需求开发流程编排：设计 → 规格 → 票据 → 实施 → 评审 → 验证，每阶段路由到对应 skill |
-| [design-inquiry](./skills/engineering/design-inquiry/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR（Architecture Decision Record，架构决策记录） |
+| [atelier](./skills/engineering/atelier/SKILL.md) | 盘问式会话，同时构建项目的领域模型，打磨术语并就地更新 `CONTEXT.md` 和 ADR（Architecture Decision Record，架构决策记录） |
 | [to-spec](./skills/engineering/to-spec/SKILL.md) | 把当前对话转化为一份 spec 文档，写入 `docs/changes/<capability-path>/spec.md` |
 | [to-plans](./skills/engineering/to-plans/SKILL.md) | 把规格或需求转化为多步骤实现计划，写入 `docs/changes/<capability-path>/plans.md` |
 | [implement](./skills/engineering/implement/SKILL.md) | 构建 spec 或一组票据描述的工作，在约定 seam 处驱动 `/tdd`，提交前以 `/code-review` 收尾 |
@@ -102,7 +102,7 @@ rm -rf ~/.claude/skills   # 若当初装了这份
 ```
 # 1. 探索设计
 # 通过提问澄清需求，产出文档：CONTEXT.md、docs/adr/*
-/design-inquiry <一句话描述需求>
+/atelier <一句话描述需求>
 
 # 2. 编写方案、规格
 /to-spec

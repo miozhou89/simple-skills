@@ -24,7 +24,7 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 | 文件 | 内容 | 由谁产出 |
 | --- | --- | --- |
-| `CONTEXT.md`、`docs/adr/*` | 领域模型、术语、技术方案 | `/design-inquiry` |
+| `CONTEXT.md`、`docs/adr/*` | 领域模型、术语、技术方案 | `/atelier` |
 | `docs/changes/<capability-path>/` | 为什么要做这个、什么在变 | 本流程（需求确认时起草） |
 | `spec.md` | 需求和场景 | `/to-spec` |
 | `plans.md` | 实现清单 | `/to-plans` |
@@ -35,7 +35,7 @@ description: 用户提出一个需求并要求方案设计或开发时必须使�
 
 ### 1. 设计
 
-- **`/design-inquiry`** — 通过提问澄清需求，形成方案，产出文档：`CONTEXT.md`、`docs/adr/*`
+- **`/atelier`** — 通过提问澄清需求，形成方案，产出文档：`CONTEXT.md`、`docs/adr/*`
 
 执行下一步流程前必须先跟用户确认。
 
