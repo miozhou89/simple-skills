@@ -1,5 +1,11 @@
 # simple-skills
 
+## 1.8.7
+
+### Patch Changes
+
+- rename design-inquiry to atelier
+
 ## 1.8.6
 
 ### Patch Changes
